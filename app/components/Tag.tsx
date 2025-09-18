@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 interface TagProps {
@@ -9,7 +11,10 @@ interface TagProps {
 
 export default function Tag({ text, className = '', children }: TagProps) {
   return (
-    <div 
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
       className={`inline-flex p-2 pr-5 w-fit justify-center items-center gap-2.5 rounded-full outline outline-1 outline-white bg-white/30 backdrop-blur-sm ${className}`}
     >
       {/* Icon */}
@@ -39,6 +44,6 @@ export default function Tag({ text, className = '', children }: TagProps) {
       
       {/* Additional children content */}
       {children}
-    </div>
+    </motion.div>
   );
 } 

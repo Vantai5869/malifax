@@ -22,9 +22,8 @@ export default function ContentHeaderSection({
         <div className={`text-center w-full max-w-[1194px] mx-auto`}>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className={`text-[30px] lg:text-[60px] font-semibold text-center mb-9 font-plus-jakarta ${titleColor} leading-[38px] lg:leading-[72px] xl:tracking-[-1.2px]`}
           >
             {title}
@@ -33,9 +32,8 @@ export default function ContentHeaderSection({
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
             className={`text-[14px] lg:text-[18px] text-center font-plus-jakarta text-[#181D27] font-normal leading-[20px] lg:leading-[28px] w-full max-w-[1194px] mx-auto`}
           >
             {description}
