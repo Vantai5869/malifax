@@ -1,4 +1,3 @@
-'use client';
 import HeroBackground from "../components/HeroBackground";
 import Tag from "../components/Tag";
 import Title from "../components/Title";
@@ -7,9 +6,6 @@ import AccessSystemItem from "../components/AccessSystemItem";
 import ServicesList from "../components/about/ServicesList";
 import CTABanner from "../components/CTABanner";
 import Footer from "../components/Footer";
-import AnimatedSection from "../components/AnimatedSection";
-import FloatingElement from "../components/FloatingElement";
-import { motion } from 'framer-motion';
 
 export default function AboutUs() {
   return (
@@ -19,23 +15,14 @@ export default function AboutUs() {
         <section className="relative min-h-screen xl:min-h-[1024px]">
           {/* Tag and Title - Responsive positioning and sizing */}
           <div className="flex flex-col absolute w-full top-[223px] xl:top-[274px]">
-            <motion.div 
-              className="inline-flex flex-col justify-center items-center gap-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <div className="inline-flex flex-col justify-center items-center gap-4">
               <Tag text="TECHNOLOGY AND SOFTWARE" />
               <Title>About Us</Title>
-            </motion.div>
+            </div>
           </div>
           
           {/* About Center Image */}
-          <FloatingElement 
-            className="absolute w-[287.66px] bottom-[-13px] lg:w-[691.266px] lg:bottom-[-29px] left-1/2 transform -translate-x-1/2 z-50"
-            delay={0.5}
-            intensity={8}
-          >
+            <div className="absolute   w-[287.66px] bottom-[-13px]  lg:w-[691.266px] lg:bottom-[-29px] left-1/2 transform -translate-x-1/2 z-50">
             <Image
               src="/imgs/about-center-img.png"
               alt="About Center Image"
@@ -43,7 +30,7 @@ export default function AboutUs() {
               height={471}
               className="w-full h-auto object-contain"
             />
-          </FloatingElement>
+            </div>
         </section>
       </HeroBackground>
 
@@ -53,30 +40,16 @@ export default function AboutUs() {
         <div className="hidden lg:flex flex-col items-center gap-9 w-full max-w-[1439px] mx-auto px-6">
           {/* Text Block 1 - Two lines of text */}
           <div className="flex flex-col items-start self-stretch">
-            <div 
-              className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-1.2px]"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
+            <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-1.2px]">
               Welcom to
             </div>
-            <div 
-              className="self-stretch text-center text-[#0452D8] font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-1.2px]"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
+            <div className="self-stretch text-center text-[#0452D8] font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-1.2px]">
               Maxlifax Technologies!
             </div>
           </div>
           
           {/* Description Block */}
-          <div 
-            className="w-full max-w-[1194px] text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-lg font-normal leading-7"
-            data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-duration="800"
-          >
+          <div className="w-full max-w-[1194px] text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-lg font-normal leading-7">
             Since 1985, we've been at the forefront of innovation, transforming from a system integrator into a leader in mobility, data communication, and networking solutions. Our mission is to empower businesses with cutting-edge technology that drives efficiency, enhances security, fosters growth, and promotes sustainability.
           </div>
         </div>
@@ -85,30 +58,16 @@ export default function AboutUs() {
         <div className="lg:hidden flex flex-col items-center gap-9 w-full max-w-[375px] mx-auto px-4">
           {/* Text Block 1 - Two lines of text */}
           <div className="flex flex-col items-center self-stretch w-full">
-            <div 
-              className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px]"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
+            <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px]">
               Welcom to
             </div>
-            <div 
-              className="self-stretch text-center text-[#0452D8] font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px]"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
+            <div className="self-stretch text-center text-[#0452D8] font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px]">
               Maxlifax Technologies!
             </div>
           </div>
           
           {/* Description Block */}
-          <div 
-            className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5"
-            data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-duration="800"
-          >
+          <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5">
             Since 1985, we've been at the forefront of innovation, transforming from a system integrator into a leader in mobility, data communication, and networking solutions. Our mission is to empower businesses with cutting-edge technology that drives efficiency, enhances security, fosters growth, and promotes sustainability.
           </div>
         </div>
@@ -118,63 +77,36 @@ export default function AboutUs() {
       <section className="bg-white pt-20">
         <div className="flex flex-col justify-center items-center w-full max-w-[1440px] mx-auto px-4 xl:px-6">
           {/* Section Heading */}
-          <div 
-            className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
+          <div className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]">
             Our <span className="text-[#0452D8]">Core Values</span>
           </div>
           
           {/* Core Values Cards */}
           <div className="mt-10 grid grid-cols-1 xl:grid-cols-2  gap-4 xl:gap-8 max-w-7xl mx-auto">
-            {[
-              {
-                title: "Innovation",
-                description: "Always ahead of the curve, embracing the latest technological advancements."
-              },
-              {
-                title: "Reliability", 
-                description: "Dependable solutions that ensure your business runs smoothly."
-              },
-              {
-                title: "Customer Focus",
-                description: "Tailored solutions that exceed expectations."
-              },
-              {
-                title: "Integrity",
-                description: "Transparent and honest in all our dealings."
-              },
-              {
-                title: "Excellence",
-                description: "Committed to delivering top-notch products and services."
-              },
-              {
-                title: "Sustainability",
-                description: "Dedicated to implementing eco-friendly practices and solutions that reduce environmental impact."
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.1,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ 
-                  y: -5,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <AccessSystemItem
-                  title={item.title}
-                  description={item.description}
-                />
-              </motion.div>
-            ))}
+            <AccessSystemItem
+              title="Innovation"
+              description="Always ahead of the curve, embracing the latest technological advancements."
+            />
+            <AccessSystemItem
+              title="Reliability"
+              description="Dependable solutions that ensure your business runs smoothly."
+            />
+            <AccessSystemItem
+              title="Customer Focus"
+              description="Tailored solutions that exceed expectations."
+            />
+            <AccessSystemItem
+              title="Integrity"
+              description="Transparent and honest in all our dealings."
+            />
+            <AccessSystemItem
+              title="Excellence"
+              description="Committed to delivering top-notch products and services."
+            />
+            <AccessSystemItem
+              title="Sustainability"
+              description="Dedicated to implementing eco-friendly practices and solutions that reduce environmental impact."
+            />
           </div>
         </div>
       </section>
@@ -183,21 +115,12 @@ export default function AboutUs() {
       <section className="bg-white pt-20">
         <div className="flex flex-col justify-center items-center w-full max-w-[1440px] mx-auto px-4 xl:px-6">
           {/* Section Heading */}
-          <div 
-            className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
+          <div className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]">
             What We Offer
           </div>
           
           {/* Services List */}
-          <div 
-            className=" mt-6 xl:mt-[54px]"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="800"
-          >
+          <div className=" mt-6 xl:mt-[54px]">
             <ServicesList items={[
               {
                 image: "/imgs/about/cloud-solutions.png",
@@ -277,21 +200,12 @@ export default function AboutUs() {
             {/* Content */}
             <div className="flex flex-col w-full max-w-[861px] mx-auto items-center gap-9 px-4">
               {/* Title */}
-              <div 
-                className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27]"
-                data-aos="fade-up"
-                data-aos-duration="800"
-              >
+              <div className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27]">
                 Our <span className="text-[#0452D8]">Commitment</span>
               </div>
               
               {/* Description */}
-              <div 
-                className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="800"
-              >
+              <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5">
                 We are dedicated to providing business solutions that ensure the highest level of reliability, compatibility, and performance. Always at the forefront of technology, we enable the convergence of data, voice, and video through integrated wireless technology and cloud platforms. We are also committed to sustainability, implementing eco-friendly practices and solutions to reduce our environmental footprint.
               </div>
             </div>
@@ -335,21 +249,12 @@ export default function AboutUs() {
             {/* Content */}
             <div className="flex flex-col w-full max-w-[861px] pt-[196px] mx-auto items-center gap-9 relative z-10">
               {/* Title */}
-              <div 
-                className="text-center font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-2%] text-[#181D27]"
-                data-aos="fade-up"
-                data-aos-duration="800"
-              >
+              <div className="text-center font-['Plus_Jakarta_Sans'] text-[60px] font-semibold leading-[72px] tracking-[-2%] text-[#181D27]">
                 Our <span className="text-[#0452D8]">Commitment</span>
               </div>
               
               {/* Description */}
-              <div 
-                className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-lg font-normal leading-7"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="800"
-              >
+              <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-lg font-normal leading-7">
                 We are dedicated to providing business solutions that ensure the highest level of reliability, compatibility, and performance. Always at the forefront of technology, we enable the convergence of data, voice, and video through integrated wireless technology and cloud platforms. We are also committed to sustainability, implementing eco-friendly practices and solutions to reduce our environmental footprint.
               </div>
             </div>
@@ -360,21 +265,12 @@ export default function AboutUs() {
         <section className="pt-20 xl:mt-[192px]">
           <div className="flex flex-col w-full max-w-[1440px] mx-auto px-6 items-center gap-9">
             {/* Section Heading */}
-            <div 
-              className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
+            <div className="text-center font-['Plus_Jakarta_Sans'] text-[30px] font-semibold leading-[38px] text-[#181D27] xl:text-[60px] xl:leading-[72px] xl:tracking-[-2%]">
               Regional Presence
             </div>
             
             {/* Description */}
-            <div 
-              className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5 xl:text-lg xl:leading-7"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
+            <div className="self-stretch text-center text-[#181D27] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5 xl:text-lg xl:leading-7">
               With operations in Singapore, Malaysia, and Indonesia, we support regional data communication needs, backed by strong partnerships with leading telecommunication service providers.
             </div>
           </div>
@@ -382,12 +278,7 @@ export default function AboutUs() {
 
         {/* Regional Image Section */}
         <section>
-          <div 
-            className="flex justify-center"
-            data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-duration="800"
-          >
+          <div className="flex justify-center">
             <Image
               src="/imgs/about/regional.png"
               alt="Regional Presence"
@@ -399,16 +290,14 @@ export default function AboutUs() {
         </section>
 
         {/* CTA Banner */}
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <CTABanner
-            title="Connect with Us"
-            description={[
-              "Explore our website to learn more about our services. Contact us today to discuss your technology needs and discover how Malifax Technologies can be your trusted technology partner."
-            ]}
-            buttonText="Contact us now!"
-            buttonLink="/contact"
-          />
-        </div>
+        <CTABanner
+          title="Connect with Us"
+          description={[
+            "Explore our website to learn more about our services. Contact us today to discuss your technology needs and discover how Malifax Technologies can be your trusted technology partner."
+          ]}
+          buttonText="Contact us now!"
+          buttonLink="/contact"
+        />
 
         {/* Footer */}
         <Footer />

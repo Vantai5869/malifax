@@ -10,11 +10,8 @@ import SolutionCarousel from "./components/home/SolutionCarousel";
 import ServiceCard from "./components/home/ServiceCard";
 import PartnersSwiper from "./components/home/PartnersSwiper";
 import ShopSwiper from "./components/home/ShopSwiper";
-import AnimatedSection from "./components/AnimatedSection";
-import FloatingElement from "./components/FloatingElement";
 import { useRef } from "react";
 import { Swiper as SwiperType } from 'swiper';
-import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -56,11 +53,7 @@ export default function Home() {
       <HeroBackground>
         <section className="flex flex-1 relative justify-center items-center">
           <div className="absolute inset-0 pointer-events-none z-0">
-            <FloatingElement 
-              className="absolute top-[51px] left-[19px] md:top-[51px] md:left-[200px] xl:top-[52px] xl:left-[750px] opacity-100"
-              delay={0.2}
-              intensity={8}
-            >
+            <div className="absolute top-[51px] left-[19px] md:top-[51px] md:left-[200px] xl:top-[52px] xl:left-[750px] opacity-100">
               <Image
                 src="/imgs/home-img0.png"
                 alt="Home Image 0"
@@ -68,14 +61,8 @@ export default function Home() {
                 height={107}
                 className="w-[113px] h-[107px] md:w-[140px] md:h-[132px] lg:w-auto lg:h-auto lg:max-w-[180px] object-contain"
               />
-            </FloatingElement>
-            
-            <motion.div 
-              className="absolute top-8 lg:top-16 right-0 lg:right-[60px] transform -rotate-[-0deg] opacity-100 overflow-hidden"
-              initial={{ opacity: 0, scale: 0.8, x: 100 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            >
+            </div>
+            <div className="absolute top-8 lg:top-16 right-0 lg:right-[60px] transform -rotate-[-0deg] opacity-100 overflow-hidden">
               <Image
                 src="/imgs/home-img1.png"
                 alt="Home Image 1"
@@ -83,13 +70,8 @@ export default function Home() {
                 height={674}
                 className="w-[304.77px] h-[309.89px] md:w-[320px] md:h-[325px] lg:h-auto  xl:w-[761px]  object-contain"
               />
-            </motion.div>
-            
-            <FloatingElement 
-              className="absolute bottom-[54px] left-[80px] md:bottom-[80px] md:left-[200px] xl:bottom-[90px] xl:left-[511px] opacity-100"
-              delay={0.8}
-              intensity={6}
-            >
+            </div>
+            <div className="absolute bottom-[54px] left-[80px] md:bottom-[80px] md:left-[200px] xl:bottom-[90px] xl:left-[511px] opacity-100">
               <Image
                 src="/imgs/home-img2.png"
                 alt="Home Image 2"
@@ -97,13 +79,8 @@ export default function Home() {
                 height={176}
                 className="w-auto h-auto max-w-[120px] lg:max-w-[185px]"
               />
-            </FloatingElement>
-            
-            <FloatingElement 
-              className="absolute bottom-[17px] right-[20px] md:bottom-[22px] md:right-[50px] xl:bottom-[28px] xl:right-[80px] opacity-100"
-              delay={1.1}
-              intensity={10}
-            >
+            </div>
+            <div className="absolute bottom-[17px] right-[20px] md:bottom-[22px] md:right-[50px] xl:bottom-[28px] xl:right-[80px] opacity-100">
               <Image
                 src="/imgs/home-img3.png"
                 alt="Home Image 3"
@@ -111,24 +88,14 @@ export default function Home() {
                 height={224}
                 className="w-auto h-auto max-w-[140px] lg:max-w-[210px]"
               />
-            </FloatingElement>
+            </div>
           </div>
           
           {/* Content */}
           <div className="mx-6 max-w-[789px] py-8 md:ml-[11.25%] md:mr-auto xl:ml-[11.25%] flex flex-col items-center md:items-start xl:mr-auto relative z-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <Tag text="TECHNOLOGY AND SOFTWARE" />
-              </motion.div>
-              
-              <motion.h1 
+              <Tag text="TECHNOLOGY AND SOFTWARE" />
+              <h1 
                 className="text-white font-['Plus_Jakarta_Sans'] font-semibold text-[36px] leading-[44px] tracking-[-0.02em] text-center md:text-left xl:text-left flex flex-col items-center md:items-start xl:items-start gap-2 xl:gap-4 md:text-[48px] md:leading-[60px] xl:text-[72px] xl:leading-[90px] mt-2 md:mt-4"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
               >
                 <span className="md:hidden">We Provide IT</span>
                 <span className="md:hidden">& Mobile Solutions,</span>
@@ -170,7 +137,7 @@ export default function Home() {
                   /> 
                   <span>Malifax Technologies</span>
                 </div>
-              </motion.h1>
+              </h1>
           </div>
         </section>
       </HeroBackground>
@@ -179,20 +146,14 @@ export default function Home() {
       <section className="bg-white text-[#181D27] pt-[100px]  md:pt-[77]">
         <div className=" mx-auto">
           {/* Title */}
-          <h2 
-            className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-center lg:text-[36px] lg:leading-[44px] lg:tracking-[-0.02em] mb-6 px-4"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
+          <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-center lg:text-[36px] lg:leading-[44px] lg:tracking-[-0.02em] mb-6 px-4">
             Our partners have <span className="text-blue-500">trusted us</span>
           </h2>
           
           {/* Logo List - Swiper */}
-          <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-            <PartnersSwiper 
-              logos={Array.from({ length: 20 }, () => "/imgs/company-logo.png")} 
-            />
-          </div>
+          <PartnersSwiper 
+            logos={Array.from({ length: 20 }, () => "/imgs/company-logo.png")} 
+          />
         </div>
       </section>
 
@@ -201,19 +162,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Title */}
           <div className="text-center mb-8">
-            <h2 
-              className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-blue-500 self-stretch text-center lg:text-[60px] lg:leading-[72px] lg:tracking-[-1.2px]"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
+            <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-blue-500 self-stretch text-center lg:text-[60px] lg:leading-[72px] lg:tracking-[-1.2px]">
               Products and Solutions
             </h2>
-            <p 
-              className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-[#181D27] self-stretch text-center lg:text-[60px] lg:leading-[72px] lg:tracking-[-1.2px]"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
+            <p className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] text-[#181D27] self-stretch text-center lg:text-[60px] lg:leading-[72px] lg:tracking-[-1.2px]">
               for your business
             </p>
           </div>
@@ -229,11 +181,7 @@ export default function Home() {
         <div className="max-w-[1194px] w-full mx-auto">
           {/* Title */}
           <div className="text-center">
-            <h2 
-              className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] xl:text-[60px] xl:leading-[72px] xl:tracking-[-0.02em] text-center"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
+            <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] xl:text-[60px] xl:leading-[72px] xl:tracking-[-0.02em] text-center">
               <span className="text-blue-500">Services</span> we provide
             </h2>
           </div>
@@ -245,27 +193,12 @@ export default function Home() {
               <div className="flex justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 xl:gap-8 w-full">
                   {services.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: index * 0.1,
-                        ease: "easeOut"
-                      }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      whileHover={{ 
-                        y: -5,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      <ServiceCard 
-                        icon={service.icon}
-                        title={service.title}
-                        description={service.description}
-                      />
-                    </motion.div>
+                    <ServiceCard 
+                      key={index} 
+                      icon={service.icon}
+                      title={service.title}
+                      description={service.description}
+                    />
                   ))}
                 </div>
               </div>
@@ -281,46 +214,31 @@ export default function Home() {
           <div className="flex flex-col xl:max-w-[1258px] w-full mx-auto xl:mb-15 xl:flex-row items-center justify-between gap-6 xl:gap-0  mb-6 xl:mb-12">
             {/* Title */}
             <div className="text-center xl:text-left">
-              <h2 
-                className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] xl:text-[60px] xl:leading-[72px] xl:tracking-[-0.02em] text-center xl:text-left"
-                data-aos="fade-right"
-                data-aos-duration="800"
-              >
+              <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] xl:text-[60px] xl:leading-[72px] xl:tracking-[-0.02em] text-center xl:text-left">
               Shop with<span className="text-blue-500"> Malifax Technologies</span>
               </h2>
             </div>
             
 
-            <div 
-              className="flex items-center gap-6"
-              data-aos="fade-left"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
-              <motion.button 
+            <div className="flex items-center gap-6">
+              <button 
                 onClick={() => {
                   console.log('Previous clicked, swiperRef:', swiperRef.current);
                   swiperRef.current?.slidePrev();
                 }}
                 className="hover:opacity-80 transition-opacity"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
               >
                 <img src="/svgs/arrow-left-btn.svg" alt="Previous" />
-              </motion.button>
-              <motion.button 
+              </button>
+              <button 
                 onClick={() => {
                   console.log('Next clicked, swiperRef:', swiperRef.current);
                   swiperRef.current?.slideNext();
                 }}
                 className="hover:opacity-80 transition-opacity"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
               >
                 <img src="/svgs/arrow-right-btn.svg" alt="Next" />
-              </motion.button>
+              </button>
             </div>
           </div>
           
@@ -334,9 +252,6 @@ export default function Home() {
             width: '100%'
           }}
           className="overflow-hidden"
-          data-aos="fade-up"
-          data-aos-delay="400"
-          data-aos-duration="800"
           >
             <div className="container mx-auto mb-15 xl:mb-12">
               <ShopSwiper swiperRef={swiperRef} />
@@ -345,16 +260,14 @@ export default function Home() {
       </section>
 
       {/* Overview Section */}
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <CTABanner 
-          title="Overview"
-          description={[
-            "Established in 1985 as a System Integrator, Malifax Technologies (S) Pte Ltd has evolved into a leading technology company with its core business strongly focused on providing mobility, data communication and networking solutions.",
-            "Since our founding, we have been supplying business solutions that ensure the highest level of reliability, compatibility and performance.",
-            "Today's integrated wireless technology has further enabled the convergence of data, voice and video. We are always at the forefront of technology by providing data migration to virtualized systems and 'cloud' platforms."
-          ]}
-        />
-      </div>
+      <CTABanner 
+        title="Overview"
+        description={[
+          "Established in 1985 as a System Integrator, Malifax Technologies (S) Pte Ltd has evolved into a leading technology company with its core business strongly focused on providing mobility, data communication and networking solutions.",
+          "Since our founding, we have been supplying business solutions that ensure the highest level of reliability, compatibility and performance.",
+          "Today's integrated wireless technology has further enabled the convergence of data, voice and video. We are always at the forefront of technology by providing data migration to virtualized systems and 'cloud' platforms."
+        ]}
+      />
 
       {/* Footer */}
       <Footer />
