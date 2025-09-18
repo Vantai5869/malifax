@@ -13,7 +13,7 @@ export default function PageLayout({ children, className = '' }: PageLayoutProps
       
       <div className="absolute inset-0 rounded-2xl overflow-hidden z-0">
         <Image
-          src="/imgs/Background.png"
+          src="/imgs/main-bg.png"
           alt="Background"
           fill
           className="object-cover"

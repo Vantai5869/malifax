@@ -16,7 +16,7 @@ export default function HeroBackground({ children, className = '' }: HeroBackgro
       {/* Background Image */}
       <div className="absolute mx-2 my-2 lg:mx-[22.5px] lg:my-6 inset-0 rounded-2xl overflow-hidden z-0">
         <Image
-          src="/imgs/Background.png"
+          src="/imgs/main-bg.png"
           alt="Background"
           fill
           className="object-cover"
