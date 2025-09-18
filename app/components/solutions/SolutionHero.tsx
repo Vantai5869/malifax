@@ -37,12 +37,12 @@ export default function SolutionHero({ imageSrc, title, rightMaxWidth = "max-w-[
         <img
           src="/imgs/overlay1.png"
           alt="overlay-top-right"
-          className="absolute top-0 right-0 object-contain"
+          className="absolute top-0 right-0 object-contain max-w-[230px] xl:max-w-[500px]"
         />
         <img
           src="/imgs/overlay2.png"
           alt="overlay-mid-right"
-          className="absolute right-[40%] bottom-[20%] object-contain"
+          className="absolute left-[50%] bottom-[8%] object-contain"
         />
         <img
           src="/imgs/overlay3.png"
