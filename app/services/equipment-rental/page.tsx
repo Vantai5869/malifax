@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
 import WhyChoose from '../../components/solutions/WhyChoose';
@@ -64,30 +66,53 @@ export default function EquipmentRentalPage() {
       />
 
       <section className="bg-white">
-        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto"
+        >
           <WhyChoose title="Our Equipment Rental Services?" />
-        </div>
+        </motion.div>
       </section>
 
-      <GridSection items={whyChooseItems} />
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <GridSection items={whyChooseItems} />
+      </motion.div>
 
       {/* Our Equipment Rental Services Section */}
       <section className="mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Title */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
               Our Equipment Rental Services
             </h2>
-          </div>
+          </motion.div>
 
-          {/* Single Service Card */}
-          <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex justify-center"
+          >
             <AccessSystemItem
               title="IT Equipment"
               description="Rent laptops, desktops, servers, and networking equipment to support your IT needs."
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -95,22 +120,33 @@ export default function EquipmentRentalPage() {
       <section className="bg-white mb-[35px]">
         <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-4 xl:gap-8 px-4 xl:px-0">
           {/* Left Side - Title */}
-          <div className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0"
+          >
             <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
               <span className="text-[#181D27]">Benefits of</span>{" "}
               <span className="text-[#0452D8]">Our Equipment Rental Services</span>
             </h2>
-          </div>
+          </motion.div>
           
           {/* Right Side - Benefits Cards Grid */}
           <div className="w-full xl:w-auto">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
               {benefitsItems.map((item, index) => (
-                <AccessSystemItem
-                  key={index}
-                  title={item.title}
-                  description={item.description}
-                />
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.05 * index }}
+                  className="w-full"
+                >
+                  <AccessSystemItem title={item.title} description={item.description} />
+                </motion.div>
               ))}
             </div>
           </div>
@@ -125,12 +161,19 @@ export default function EquipmentRentalPage() {
           containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
         />
       </section>
-      <CTABanner
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <CTABanner
         title="Get Started with Malifax Equipment Rental Services"
         description="Equip your business with our reliable and cost-effective rental solutions. Contact us today to learn more about how we can support your equipment rental needs and help you achieve your business goals."
         buttonText="Contact us now!"
         buttonLink="/contact"
-      />
+        />
+      </motion.div>
       
       <Footer />
     </div>

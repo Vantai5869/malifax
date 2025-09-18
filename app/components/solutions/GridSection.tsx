@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface GridItem {
   title: string;
@@ -39,18 +41,25 @@ export default function GridSection({ items, className = '' }: GridSectionProps)
             <div className={`hidden xl:block  border-t border-r border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tr-[22px] rounded-br-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
             
             {/* Main content squares */}
-            <div className="grid grid-cols-2 gap-[6px] justify-center xl:flex xl:flex-nowrap xl:gap-[6px] xl:items-stretch">
-              {items.map((item, index) => (
-                <div key={index} className={`flex flex-col w-full xl:flex-1 p-6 gap-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'xl:w-[449px]' : 'xl:w-[234px]'}`}>
-                  <h3 className="text-[#181D27] font-['Plus_Jakarta_Sans'] text-xl font-semibold leading-[30px]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#717680] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-[6px] justify-center xl:flex xl:flex-nowrap xl:gap-[6px] xl:items-stretch">
+            {items.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 * index }}
+                className={`flex flex-col w-full xl:flex-1 p-6 gap-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'xl:w-[449px]' : 'xl:w-[234px]'}`}
+              >
+                <h3 className="text-[#181D27] font-['Plus_Jakarta_Sans'] text-xl font-semibold leading-[30px]">
+                  {item.title}
+                </h3>
+                <p className="text-[#717680] font-['Plus_Jakarta_Sans'] text-sm font-normal leading-5">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
             
             {/* Right half square */}
             <div className={`hidden xl:block  border-t border-l border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tl-[22px] rounded-bl-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>

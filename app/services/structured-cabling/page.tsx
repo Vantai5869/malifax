@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
 import WhyChoose from '../../components/solutions/WhyChoose';
@@ -76,12 +78,18 @@ export default function StructuredCablingPage() {
               className="block w-full max-w-[40vw] h-auto object-contain"
             />
           </div>
-          <div className="relative z-10 flex  flex-col items-start gap-4 order-1 lg:order-1 xl:pl-20 mt-[300px] xl:mt-[436px]">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 flex  flex-col items-start gap-4 order-1 lg:order-1 xl:pl-20 mt-[300px] xl:mt-[436px]"
+          >
             <Tag text="Solutions" />
             <Title className="text-4xl lg:text-5xl xl:text-7xl">
               Structured Cabling
             </Title>
-          </div>
+          </motion.div>
         </div>
       </div>
     </HeroBackground>
@@ -97,27 +105,45 @@ export default function StructuredCablingPage() {
       </section>
 
       <section className="mt-20">
-        <GridSection items={whyChooseItems} />
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <GridSection items={whyChooseItems} />
+        </motion.div>
       </section>
 
       {/* Our Structured Cabling Services Section */}
       <section className="mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Title */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
               Our Structured Cabling Services
             </h2>
-          </div>
+          </motion.div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
             {services.map((item, index) => (
-              <AccessSystemItem
-                key={index}
-                title={item.title}
-                description={item.description}
-              />
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 * index }}
+                className="w-full"
+              >
+                <AccessSystemItem title={item.title} description={item.description} />
+              </motion.div>
             ))}
           </div>
         </div>

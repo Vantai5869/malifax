@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
 import WhyChoose from '../../components/solutions/WhyChoose';
@@ -67,81 +69,130 @@ export default function HardwareMaintenancePage() {
       />
 
       <section className="bg-white">
-        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto"
+        >
           <WhyChoose title="Our Hardware Maintenance Services?" />
-        </div>
+        </motion.div>
       </section>
 
-      <GridSection items={whyChooseItems} />
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <GridSection items={whyChooseItems} />
+      </motion.div>
 
-      {/* Our Hardware Maintenance Services Section */}
       <section className="mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Title */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
               Our Hardware Maintenance Services
             </h2>
-          </div>
+          </motion.div>
 
-          {/* Service Cards Grid */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
-            <AccessSystemItem
-              title="Preventive Maintenance"
-              description="Regularly scheduled maintenance to identify and address potential issues before they become major problems."
-            />
-            <AccessSystemItem
-              title="Hardware Repairs"
-              description="Fast and reliable repair services for all types of IT hardware, including servers, desktops, laptops, and peripherals."
-            />
-            <AccessSystemItem
-              title="Component Replacement"
-              description="Replacement of faulty or aging components to ensure your hardware continues to perform at its best."
-            />
-            <AccessSystemItem
-              title="System Upgrades"
-              description="Upgrade your existing hardware to improve performance and extend its lifespan."
-            />
-            <AccessSystemItem
-              title="Emergency Support"
-              description="Rapid response to hardware failures and emergencies to minimize disruption to your business."
-            />
+            {[
+              {
+                title: 'Preventive Maintenance',
+                description:
+                  'Regularly scheduled maintenance to identify and address potential issues before they become major problems.',
+              },
+              {
+                title: 'Hardware Repairs',
+                description:
+                  'Fast and reliable repair services for all types of IT hardware, including servers, desktops, laptops, and peripherals.',
+              },
+              {
+                title: 'Component Replacement',
+                description:
+                  'Replacement of faulty or aging components to ensure your hardware continues to perform at its best.',
+              },
+              {
+                title: 'System Upgrades',
+                description:
+                  'Upgrade your existing hardware to improve performance and extend its lifespan.',
+              },
+              {
+                title: 'Emergency Support',
+                description:
+                  'Rapid response to hardware failures and emergencies to minimize disruption to your business.',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 * index }}
+                className="w-full"
+              >
+                <AccessSystemItem title={item.title} description={item.description} />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="bg-white mb-[35px]">
         <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-4 xl:gap-8 px-4 xl:px-0">
-          {/* Left Side - Title */}
-          <div className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0"
+          >
             <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
               <span className="text-[#181D27]">Benefits of</span>{" "}
               <span className="text-[#0452D8]">Our Hardware Maintenance Services</span>
             </h2>
-          </div>
+          </motion.div>
           
-          {/* Right Side - Benefits Cards Grid */}
           <div className="w-full xl:w-auto">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
               {benefitsItems.map((item, index) => (
-                <AccessSystemItem
-                  key={index}
-                  title={item.title}
-                  description={item.description}
-                />
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.05 * index }}
+                  className="w-full"
+                >
+                  <AccessSystemItem title={item.title} description={item.description} />
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <CTABanner
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <CTABanner
         title="Get Started with Malifax Hardware Maintenance Services"
         description="Ensure the reliability and longevity of your IT hardware with our comprehensive maintenance services. Contact us today to learn more about how we can help you maintain your digital infrastructure and keep your business running smoothly."
         buttonText="Contact us now!"
         buttonLink="/contact"
-      />
+        />
+      </motion.div>
       
       <Footer />
     </div>
