@@ -1,0 +1,149 @@
+import React from 'react';
+import SolutionHero from '../../components/solutions/SolutionHero';
+import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
+import WhyChoose from '../../components/solutions/WhyChoose';
+import GridSection from '../../components/solutions/GridSection';
+import CTABanner from '../../components/CTABanner';
+import Footer from '../../components/Footer';
+import AccessSystemItem from '../../components/AccessSystemItem';
+
+export default function DatacentreSetupPage() {
+  const whyChooseItems = [
+    { 
+      title: "Expertise", 
+      description: "Our team has extensive experience in data centre design, setup, and relocation, ensuring your project is handled with the utmost professionalism." 
+    },
+    { 
+      title: "Customized Solutions", 
+      description: "We tailor our services to meet the specific needs of your business, ensuring optimal performance and scalability." 
+    },
+    { 
+      title: "Minimal Downtime", 
+      description: "Our meticulous planning and execution minimize downtime, ensuring your business remains operational throughout the transition." 
+    },
+    { 
+      title: "Security", 
+      description: "We prioritize the security of your data and infrastructure, implementing robust measures to protect against potential threats." 
+    },
+    { 
+      title: "End-to-End Service", 
+      description: "From initial planning to final implementation, we provide comprehensive support at every stage of the process." 
+    }
+  ];
+
+  const benefitsItems = [
+    { 
+      title: "Seamless Transition", 
+      description: "Ensure a smooth and efficient transition with minimal impact on your business operations." 
+    },
+    { 
+      title: "Enhanced Performance", 
+      description: "Optimize your data centre infrastructure for improved performance and scalability." 
+    },
+    { 
+      title: "Increased Security", 
+      description: "Protect your data and infrastructure with advanced security measures." 
+    },
+    { 
+      title: "Cost Savings", 
+      description: "Reduce costs associated with downtime and inefficient data centre operations." 
+    },
+    { 
+      title: "Peace of Mind", 
+      description: "Enjoy peace of mind knowing that your data centre setup or relocation is handled by experts." 
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <SolutionHero
+        imageSrc="/imgs/solution/data-center.png"
+        title="Data Centre Setup and Relocation"
+      />
+
+      <ContentHeaderSection
+        title="Data Centre Setup and Relocation"
+        description="At Malifax Technologies, we specialize in providing comprehensive data centre setup and relocation services. Whether you’re establishing a new data centre or relocating an existing one, our expert team ensures a seamless and efficient transition with minimal disruption to your business operations."
+      />
+
+      <section className="bg-white">
+        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto">
+          <WhyChoose title="Our Data Centre Setup and Relocation Services?" />
+        </div>
+      </section>
+
+      <GridSection items={whyChooseItems} />
+
+      {/* Our Data Centre Services Section */}
+      <section className="mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
+              Our Data Centre Services
+            </h2>
+          </div>
+
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+            <AccessSystemItem
+              title="Data Centre Design and Setup"
+              description="Design and implement a data centre that meets your business requirements, including power, cooling, and network infrastructure."
+            />
+            <AccessSystemItem
+              title="Data Centre Relocation"
+              description="Plan and execute the relocation of your data centre with minimal disruption, ensuring all equipment and data are securely transferred."
+            />
+            <AccessSystemItem
+              title="Migration Services"
+              description="Seamlessly migrate your data and applications to the new data centre, ensuring continuity and integrity."
+            />
+            <AccessSystemItem
+              title="Asset Management"
+              description="Manage and track all data centre assets, ensuring they are properly accounted for and securely relocated."
+            />
+            <AccessSystemItem
+              title="Testing and Validation"
+              description="Conduct thorough testing and validation to ensure all systems are operational and meet performance standards."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="bg-white mb-[35px]">
+        <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-4 xl:gap-8 px-4 xl:px-0">
+          {/* Left Side - Title */}
+          <div className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0">
+            <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
+              <span className="text-[#181D27]">Benefits of</span>{" "}
+              <span className="text-[#0452D8]">Our Data Centre Setup and Relocation Services</span>
+            </h2>
+          </div>
+          
+          {/* Right Side - Benefits Cards Grid */}
+          <div className="w-full xl:w-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+              {benefitsItems.map((item, index) => (
+                <AccessSystemItem
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTABanner
+        title="Get Started with Malifax Data Centre Services"
+        description="Transform your data centre with our comprehensive setup and relocation services. Contact us today to learn more about how we can help you achieve a seamless and efficient data centre transition."
+        buttonText="Contact us now!"
+        buttonLink="/contact"
+      />
+      
+      <Footer />
+    </div>
+  );
+}

@@ -1,0 +1,147 @@
+import React from 'react';
+import SolutionHero from '../../components/solutions/SolutionHero';
+import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
+import WhyChoose from '../../components/solutions/WhyChoose';
+import CTABanner from '../../components/CTABanner';
+import Footer from '../../components/Footer';
+import AccessSystemItem from '../../components/AccessSystemItem';
+import GridSection from '@/app/components/solutions/GridSection';
+
+export default function LaptopRepairsPage() {
+  const whyChooseItems = [
+    { 
+      title: "Expert Technicians", 
+      description: "Our team of skilled technicians has extensive experience diagnosing and repairing a wide range of laptop issues." 
+    },
+    { 
+      title: "Quick Turnaround", 
+      description: "We prioritize fast and efficient service to minimize downtime and get your laptop back to you as soon as possible." 
+    },
+    { 
+      title: "Comprehensive Repairs", 
+      description: "From hardware malfunctions to software issues, we handle all types of laptop repairs." 
+    },
+    { 
+      title: "Transparent Pricing", 
+      description: "Our competitive pricing ensures you receive high-quality service without breaking the bank." 
+    }
+  ];
+
+  const services = [
+    { 
+      title: "Screen Replacement", 
+      description: "Fix cracked or malfunctioning screens with our professional screen replacement services." 
+    },
+    { 
+      title: "Battery Replacement", 
+      description: "Replace old or faulty batteries to restore your laptop's battery life and performance." 
+    },
+    { 
+      title: "Keyboard Repair", 
+      description: "Repair or replace damaged or unresponsive keyboards to ensure smooth typing." 
+    },
+    { 
+      title: "Hardware Upgrades", 
+      description: "Upgrade your laptop's hardware components, such as RAM and storage, to improve performance." 
+    }
+  ];
+
+  const benefitsItems = [
+    { 
+      title: "Reliable Repairs", 
+      description: "Trust our experienced technicians to provide reliable and effective repairs." 
+    },
+    { 
+      title: "Enhanced Performance", 
+      description: "Improve your laptop's performance with our comprehensive repair and upgrade solutions." 
+    },
+    { 
+      title: "Cost Savings", 
+      description: "Save money by repairing your laptop instead of replacing it." 
+    },
+    { 
+      title: "Peace of Mind", 
+      description: "Enjoy peace of mind knowing your laptop is in capable hands." 
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <SolutionHero
+        imageSrc="/imgs/solution/laptop-repair.png"
+        title="Laptop Repairs"
+      />
+
+      <ContentHeaderSection
+        title="Laptop Repair"
+        description="At Malifax Technologies, we understand how essential your laptop is to your daily operations. Our professional laptop repair services are designed to get you back up and running quickly, with minimal disruption to your workflow."
+      />
+
+      <section className="bg-white">
+        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto">
+          <WhyChoose title="Our Laptop Repair Services?" />
+        </div>
+      </section>
+
+      <GridSection items={whyChooseItems} />
+
+      {/* Our Laptop Repair Services Section */}
+      <section className="mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
+              Our Laptop Repair Services
+            </h2>
+          </div>
+
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+            {services.map((item, index) => (
+              <AccessSystemItem
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="bg-white mb-[35px]">
+        <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-4 xl:gap-8 px-4 xl:px-0">
+          {/* Left Side - Title */}
+          <div className="w-full xl:w-auto xl:max-w-[366px] mb-8 xl:mb-0">
+            <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
+              <span className="text-[#181D27]">Benefits of</span>{" "}
+              <span className="text-[#0452D8]">Our Laptop Repair Services</span>
+            </h2>
+          </div>
+          
+          {/* Right Side - Benefits Cards Grid */}
+          <div className="w-full xl:w-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+              {benefitsItems.map((item, index) => (
+                <AccessSystemItem
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTABanner
+        title="Get Started with Malifax Laptop Repair Services"
+        description="Restore your laptop to optimal performance with our professional repair services. Contact us today to learn more about how we can help you with all your laptop repair needs."
+        buttonText="Contact us now!"
+        buttonLink="/contact"
+      />
+      
+      <Footer />
+    </div>
+  );
+}
