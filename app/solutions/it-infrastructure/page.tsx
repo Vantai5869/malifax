@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
@@ -21,11 +23,11 @@ export default function ITInfrastructurePage() {
 
       {/* Why Choose Section */}
       <section className="bg-white mb-[134px]">
-        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto">
           <WhyChoose title="Our IT Infrastructure Services?" />
 
           {/* 8 Items Container - 2 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full place-items-center md:place-items-stretch mt-4 xl:mt-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full place-items-center md:place-items-stretch mt-4 xl:mt-8">
             {(() => {
               const services = [
                 { title: "Physical server installation", iconSrc: "/svgs/tag36_36.svg" },
@@ -39,7 +41,7 @@ export default function ITInfrastructurePage() {
               ];
 
               return services.map((service, index) => (
-                <div key={index} className="flex w-full flex-col items-end gap-3 p-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] self-stretch">
+                <motion.div key={index} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 * index }} className="flex w-full flex-col items-end gap-3 p-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] self-stretch">
                   <div className="flex p-4 items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-[linear-gradient(247deg,#FFF_0%,#ECF9FF_100%)]">
                     <Image
                       src={service.iconSrc}
@@ -51,11 +53,11 @@ export default function ITInfrastructurePage() {
                       {service.title}
                     </span>
                   </div>
-                </div>
+                </motion.div>
               ));
             })()}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <CTABanner 

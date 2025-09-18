@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import LogoGrid from '../../components/solutions/LogoGrid';
 import SolutionHero from '../../components/solutions/SolutionHero';
@@ -24,19 +26,18 @@ export default function BusinessContinuityPage() {
       />
 
       <section className="mt-20">
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-4 xl:gap-8  max-w-[1194px] mx-auto px-4 xl:px-0">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex flex-col xl:flex-row items-center justify-center gap-4 xl:gap-8  max-w-[1194px] mx-auto px-4 xl:px-0">
           <div className="w-full xl:w-[458px] flex flex-col items-start">
-            <div className="flex flex-col items-start">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="flex flex-col items-start">
               <div className="text-[#0452D8] font-['Plus_Jakarta_Sans'] max-w-[191px] xl:max-w-none text-3xl  xl:text-4xl lg:text-6xl xl:text-[60px] font-semibold leading-[38px] lg:leading-[60px] xl:leading-[72px] lg:tracking-[-1.08px] xl:tracking-[-1.2px]">
                 Malifax Technologies
                 <p className='text-[#181D27]'>Offerings</p>
               </div>
+            </motion.div>
             
-            </div>
-            
-            <div className="self-stretch text-[#181D27] font-['Plus_Jakarta_Sans'] text-[14px] lg:text-[18px] font-normal leading-[20px] lg:leading-[28px] mt-9">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="self-stretch text-[#181D27] font-['Plus_Jakarta_Sans'] text-[14px] lg:text-[18px] font-normal leading-[20px] lg:leading-[28px] mt-9">
               Malifax Technologies offers the following solutions and services in helping businesses protect against data loss.
-            </div>
+            </motion.div>
           </div>
 
           <div className="w-full xl:w-[704px] flex flex-col gap-4">
@@ -54,7 +55,7 @@ export default function BusinessContinuityPage() {
               for (let i = 0; i < services.length; i += 2) {
                 const rowServices = services.slice(i, i + 2);
                 rows.push(
-                  <div key={i} className="flex flex-col lg:flex-row gap-4">
+                  <motion.div key={i} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 * i }} className="flex flex-col lg:flex-row gap-4">
                     {rowServices.map((service, index) => (
                       <ServiceCard
                         key={i + index}
@@ -62,14 +63,14 @@ export default function BusinessContinuityPage() {
                         iconSrc={service.iconSrc}
                       />
                     ))}
-                  </div>
+                  </motion.div>
                 );
               }
 
               return rows;
             })()}
           </div>
-        </div>
+        </motion.div>
 
        <LogoGrid
           positions={[4, 9, 10, 15, 20, 21, 25, 28]}
@@ -80,11 +81,13 @@ export default function BusinessContinuityPage() {
         />
       </section>
 
-      <CTABanner 
+      <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <CTABanner 
         description="Protect your business with our comprehensive IT Business Continuity and Disaster Recovery solutions. Contact us today to learn more about how we can help you ensure the continuity and resilience of your business operations."
         buttonText="Contact us now!"
         buttonLink="/contact"
-      />
+        />
+      </motion.div>
 
       <Footer />
     </div>

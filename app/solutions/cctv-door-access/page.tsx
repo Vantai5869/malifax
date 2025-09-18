@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import LogoGrid from '../../components/solutions/LogoGrid';
 import SolutionHero from '../../components/solutions/SolutionHero';
@@ -27,11 +29,22 @@ export default function CCTVDoorAccessPage() {
 
       {/* Why Choose Section */}
       <section className="bg-white">
-        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto">
-    
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto"
+        >
           <WhyChoose title="Our CCTV & Door Access Systems?" className="mr-[10px]" />
           {/* 2 Items Container */}
-          <div className="flex flex-col items-start gap-4 md:flex-row md:gap-8 w-full mt-4 xl:mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col items-start gap-4 md:flex-row md:gap-8 w-full mt-4 xl:mt-8"
+          >
             {/* Item 1 - Access Control System */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
               <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
@@ -61,17 +74,23 @@ export default function CCTVDoorAccessPage() {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Feature Cards Section */}
       <section className="mt-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[46px] flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[46px] flex justify-center"
+        >
           {/* 3 Columns Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center md:place-items-stretch">
             {/* Column 1 - 2 items */}
-            <div className="flex flex-col gap-6 xl:mt-[90px]">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }} className="flex flex-col gap-6 xl:mt-[90px]">
               <SolutionFeatureCard
                 imageSrc="/svgs/access-control-system.svg"
                 title="Enhanced"
@@ -84,10 +103,10 @@ export default function CCTVDoorAccessPage() {
                 span="Use"
                 description="Our systems are user-friendly, with intuitive interfaces that make monitoring and managing security simple and efficient."
               />
-            </div>
+            </motion.div>
 
             {/* Column 2 - 2 items */}
-            <div className="flex flex-col gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-col gap-6">
               <SolutionFeatureCard
                 imageSrc="/svgs/remote-monitoring.svg"
                 title="Real-Time"
@@ -99,30 +118,30 @@ export default function CCTVDoorAccessPage() {
                 title="Scalability"
                 description="Our solutions are scalable, making them suitable for businesses of all sizes, from small offices to large enterprises."
               />
-            </div>
+            </motion.div>
 
             {/* Column 3 - 1 item */}
-            <div className="flex flex-col gap-6 xl:mt-[250px]">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col gap-6 xl:mt-[250px]">
               <SolutionFeatureCard
                 imageSrc="/svgs/24-7-support.svg"
                 title="Access"
                 span="Control"
                 description="Manage who enters your premises with our sophisticated door access systems, which can be customized to meet your specific security needs."
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Our CCTV & Door Access Systems Section */}
       <section className="mt-20">
-        <div className="max-w-[1194px] mx-auto px-4 xl:px-0">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-[1194px] mx-auto px-4 xl:px-0">
           {/* Main Title */}
-          <div className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-16">
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
               Our CCTV & Door Access Systems
             </h2>
-          </div>
+          </motion.div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
@@ -147,12 +166,12 @@ export default function CCTVDoorAccessPage() {
               description="Ongoing maintenance and support to ensure your security systems are always operational and up-to-date."
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Benefits Section */}
       <section className="bg-white">
-        <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-9 xl:gap-[135px] px-4 xl:px-0">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-9 xl:gap-[135px] px-4 xl:px-0">
           {/* Left Side - Title */}
           <div className="w-full xl:w-auto xl:max-w-[355px] mb-8 xl:mb-0">
             <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
@@ -182,7 +201,7 @@ export default function CCTVDoorAccessPage() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <LogoGrid
           positions={[4, 9, 10, 15, 20, 21, 25, 28]}

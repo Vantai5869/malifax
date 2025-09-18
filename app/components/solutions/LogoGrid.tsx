@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface LogoGridProps {
   positions: number[]; // 0-based slot positions where logos appear
@@ -20,7 +22,13 @@ const LogoGrid: React.FC<LogoGridProps> = ({
   containerClassName = '',
 }) => {
   return (
-    <div className={`flex flex-col justify-center items-center gap-3 w-full max-w-[1440px] mx-auto ${containerClassName}`}>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className={`flex flex-col justify-center items-center gap-3 w-full max-w-[1440px] mx-auto ${containerClassName}`}
+    >
       <div className="flex flex-wrap justify-center items-center gap-3 w-full">
         {Array.from({ length: totalSlots }, (_, index) => {
           const logoIndex = positions.indexOf(index);
@@ -33,8 +41,12 @@ const LogoGrid: React.FC<LogoGridProps> = ({
           }
 
           return (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.02 * index }}
               className={`${isWide ? 'w-[calc(200px+0.75rem)] flex-none' : 'w-[100px] flex-none'} h-[100px] aspect-square rounded-lg flex items-center justify-center ${hasLogo ? 'bg-[rgb(4,82,216)]' : 'bg-[#F5F5F5]'} `}
             >
               {hasLogo && (
@@ -46,11 +58,11 @@ const LogoGrid: React.FC<LogoGridProps> = ({
                   className={`${isWide ? 'w-[120px]' : 'w-[60px]'} h-[60px]`}
                 />
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

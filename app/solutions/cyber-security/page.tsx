@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
 import CyberSecurityCard from '../../components/CyberSecurityCard';
@@ -22,25 +24,25 @@ export default function CyberSecurityPage() {
 
       {/* Why Choose Section */}
       <section className="">
-        <div className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-8 xl:gap-5 px-4 xl:px-0">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-8 xl:gap-5 px-4 xl:px-0">
           {/* Left Side - Title and Description */}
           <div className="w-full xl:w-auto xl:max-w-[472px] mb-8 xl:mb-0">
-            <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px] mb-9 xl:mb-0">
+            <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px] mb-9 xl:mb-0">
               <span className="text-[#181D27]">Why Choose Our</span>{" "}
               <span className="text-[#0452D8]">Cyber Security Solutions?</span>
-            </h2>
+            </motion.h2>
             
             {/* Description - Hidden on mobile, visible on xl */}
-            <div className="hidden xl:block mt-9">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.08 }} className="hidden xl:block mt-9">
               <p className="self-stretch text-[#181D27] font-plus-jakarta text-lg font-normal leading-7">
                 Malifax Technologies offers solutions and services in assessment, consulting, design, architecting, implementation and deployment. We also provide maintenance and optimisation services in the following areas:
               </p>
-            </div>
+            </motion.div>
           </div>
           
           {/* Right Side - Cyber Security Cards Grid */}
           <div className="w-full xl:w-auto">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.05 }} className="grid grid-cols-1 xl:grid-cols-2 gap-4">
               <CyberSecurityCard title="Access control" />
               <CyberSecurityCard title="Antivirus and antimalware software" />
               <CyberSecurityCard title="Data loss prevention" />
@@ -53,9 +55,9 @@ export default function CyberSecurityPage() {
               <CyberSecurityCard title="Network segmentation" />
               <CyberSecurityCard title="Secure access service edge (SASE)" />
               <CyberSecurityCard title="VPN" />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Partnership Network Section */}
@@ -63,9 +65,9 @@ export default function CyberSecurityPage() {
          
           
           {/* Partnership Network Diagram */}
-          <div className="flex justify-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex justify-center">
             <PartnershipNetwork />
-          </div>
+          </motion.div>
       </section>
 
       <CTABanner 

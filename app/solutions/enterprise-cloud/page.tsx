@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
@@ -22,11 +24,11 @@ export default function EnterpriseCloudPage() {
 
       {/* Why Choose Section */}
       <section className="bg-white">
-        <div className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto">
           <WhyChoose title="Our Cloud Solutions?" />
 
           {/* 2 Items Container */}
-          <div className="flex flex-col items-start gap-4 md:flex-row md:gap-8 w-full mt-4 xl:mt-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="flex flex-col items-start gap-4 md:flex-row md:gap-8 w-full mt-4 xl:mt-8">
             {/* Item 1 - Access Control System */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
               <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
@@ -56,8 +58,8 @@ export default function EnterpriseCloudPage() {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <LogoGrid
           positions={[4, 9, 10, 15, 20, 21, 25, 28]}
           wideLogoNumbers={[2, 4, 6, 8]}
