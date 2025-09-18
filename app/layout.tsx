@@ -24,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} antialiased`}
       >
+        <Navigation />
         <main>
           {children}
         </main>

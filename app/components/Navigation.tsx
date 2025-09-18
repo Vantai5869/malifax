@@ -50,13 +50,13 @@ export default function Navigation() {
       const currentScrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      const isAtBottom = currentScrollY + windowHeight >= documentHeight - 10; // 10px tolerance
+      const isAtBottom = currentScrollY + windowHeight >= documentHeight - 10;
       
-      // Show navigation when scrolling up or at bottom of page
+      
       if (currentScrollY < lastScrollY || isAtBottom) {
         setIsVisible(true);
       } 
-      // Hide navigation immediately when starting to scroll down (no need to wait 100px)
+      
       else if (currentScrollY > lastScrollY) {
         setIsVisible(false);
       }
@@ -67,7 +67,7 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Close mobile menu when resizing to desktop
+  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) setMobileOpen(false);
@@ -76,7 +76,7 @@ export default function Navigation() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Disable body scroll when mobile menu is open
+  
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
@@ -92,8 +92,8 @@ export default function Navigation() {
   return (
     <>
       <nav 
-        className={`fixed top-0 px-2 lg:px-[22.5px] mt-2 lg:mt-6 w-full z-50 transition-all duration-300 ${
-          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
+        className={`fixed inset-x-0 top-0 px-2 lg:px-[22.5px] mt-2 lg:mt-6 w-screen max-w-none z-50 transition-opacity duration-300 ${
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
         <div 
