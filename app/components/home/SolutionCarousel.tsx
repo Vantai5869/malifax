@@ -163,14 +163,14 @@ export default function SolutionCarousel() {
       {/* Mobile & Tablet Layout - Display as list without horizontal scroll */}
       <div className="xl:hidden">
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
             {services.map((service, index) => {
               const isActive = index === activeIndex;
               
               return (
                 <div 
                   key={index}
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer flex"
                   onClick={() => setActiveIndex(index)}
                 >
                   <SolutionCard 
