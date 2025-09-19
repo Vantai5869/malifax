@@ -20,7 +20,7 @@ const AccessSystemItem: React.FC<AccessSystemItemProps> = ({
       transition={{ duration: 0.5 }}
       className="flex w-full max-w-[581px] p-3 flex-col items-end gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] self-stretch"
     >
-      <div className="flex p-6 h-full flex-col items-start gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+      <div className="flex p-6 h-full flex-col items-start gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
         {/* Top Section - Icon and Title */}
         <div className="flex items-center gap-4">
           <Image

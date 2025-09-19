@@ -47,7 +47,7 @@ export default function CCTVDoorAccessPage() {
           >
             {/* Item 1 - Access Control System */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
-              <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <Image
                   src="/svgs/tag36_36.svg"
                   alt="Access Control Icon"
@@ -62,7 +62,7 @@ export default function CCTVDoorAccessPage() {
 
             {/* Item 2 - CCTV */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD]">
-              <div className="flex p-4 items-center gap-4 w-full rounded-2xl border border-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-4 items-center gap-4 w-full rounded-2xl border border-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <Image
                   src="/svgs/tag36_36.svg"
                   alt="CCTV Icon"

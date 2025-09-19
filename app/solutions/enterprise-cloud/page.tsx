@@ -31,7 +31,7 @@ export default function EnterpriseCloudPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="flex flex-col items-start gap-4 md:flex-row md:gap-8 w-full mt-4 xl:mt-8">
             {/* Item 1 - Access Control System */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
-              <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-4 items-center gap-4 w-full rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <Image
                   src="/svgs/tag36_36.svg"
                   alt="Cloud Security Icon"
@@ -46,7 +46,7 @@ export default function EnterpriseCloudPage() {
 
             {/* Item 2 - CCTV */}
             <div className="flex flex-col w-full items-end gap-3 p-3 flex-1 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD]">
-              <div className="flex p-4 items-center gap-4 w-full rounded-2xl border border-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-4 items-center gap-4 w-full rounded-2xl border border-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <Image
                   src="/svgs/tag36_36.svg"
                   alt="Scalability Icon"

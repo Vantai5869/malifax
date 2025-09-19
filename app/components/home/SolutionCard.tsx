@@ -20,7 +20,7 @@ export default function SolutionCard({ icon, title, description, isActive = fals
       `}
     >
       {/* Top section - Icon, Title and Description */}
-      <div className={`flex flex-col items-start gap-4 p-6 xl:p-6 rounded-2xl border border-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF] flex-1 w-full`}>
+      <div className={`flex flex-col items-start gap-4 p-6 xl:p-6 rounded-2xl border border-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white flex-1 w-full`}>
         {/* Icon and Title - responsive layout */}
         <div className="flex items-center gap-4 w-full xl:flex-col xl:items-start xl:gap-3">
           <div className="w-11 h-11 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">

@@ -28,7 +28,7 @@ function ShopProductItem({ product, index }: { product: ShopProduct; index: numb
         index % 2 === 0 ? 'xl:translate-y-22' : ''
       }`}
     >
-      <div className="flex flex-col justify-center items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-blue-50 self-stretch box-border outline outline-1 outline-gray-200">
+      <div className="flex flex-col justify-center items-start gap-4 p-6 rounded-2xl bg-gradient-to-tr from-blue-50 to-white self-stretch box-border outline outline-1 outline-gray-200">
         <h3 className="self-stretch font-['Plus_Jakarta_Sans'] font-semibold text-xl text-gray-900 leading-[30px]">
           {product.title}
         </h3>

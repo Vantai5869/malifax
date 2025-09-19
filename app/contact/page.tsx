@@ -94,7 +94,7 @@ export default function ContactUs() {
 
           {/* Right Column - Contact Form */}
           <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="flex w-full lg:w-[581px] p-3 flex-col items-end gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
-            <div className="flex p-4 lg:p-6 flex-col items-start gap-4 self-stretch rounded-4xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+            <div className="flex p-4 lg:p-6 flex-col items-start gap-4 self-stretch rounded-4xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
               <form className="w-full space-y-4">
                 {/* Full Name Input */}
                 <div className="flex flex-col items-start gap-[6px] self-stretch">

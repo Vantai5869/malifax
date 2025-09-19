@@ -10,7 +10,7 @@ const CyberSecurityCard: React.FC<CyberSecurityCardProps> = ({
 }) => {
   return (
     <div className="flex h-[146px] p-3 flex-col items-end gap-3 self-stretch rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
-      <div className="flex p-4 items-center gap-4 flex-1 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+      <div className="flex p-4 items-center gap-4 flex-1 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
         <Image
           src="/svgs/tag36_36.svg"
           alt="Cyber Security Icon"

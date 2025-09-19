@@ -9,7 +9,7 @@ interface ServiceTagProps {
 export default function ServiceTag({ title, className = '' }: ServiceTagProps) {
   return (
     <div className={`w-full flex p-3 flex-col items-end gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] ${className}`}>
-      <div className="w-full flex p-4 items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+      <div className="w-full flex p-4 items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
         {/* Left side - Icon */}
         <div className="flex-shrink-0">
           <Image

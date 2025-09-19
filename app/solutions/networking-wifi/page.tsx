@@ -32,7 +32,7 @@ export default function NetworkingWifiPage() {
           <div className="flex flex-col lg:flex-row justify-center items-start gap-[47px] lg:gap-12 place-items-center lg:place-items-stretch">
             {/* Service Card 1 */}
             <div className="flex w-full h-fit lg:w-[388px] p-3 flex-col justify-center items-center gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] lg:mt-[108px]">
-              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <div className="max-w-[280px] flex justify-start">
                   <Image
                     src="/svgs/solution/gateway-installation.svg"
@@ -50,7 +50,7 @@ export default function NetworkingWifiPage() {
 
             {/* Service Card 2 */}
             <div className="flex w-full h-fit lg:w-[388px] p-3 flex-col justify-center items-center gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)]">
-              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <div className="max-w-[280px] flex justify-start">
                   <Image
                     src="/svgs/solution/wifi-survey.svg"
@@ -68,7 +68,7 @@ export default function NetworkingWifiPage() {
 
             {/* Service Card 3 */}
             <div className="flex w-full h-fit lg:w-[388px] p-3 flex-col justify-center items-center gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] lg:mt-[108px]">
-              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-br from-white to-[#ECF9FF]">
+              <div className="flex p-6 flex-col items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
                 <div className="max-w-[280px] flex justify-start">
                   <Image
                     src="/svgs/solution/lan-solutions.svg"
