@@ -24,7 +24,7 @@ interface ShopSwiperProps {
 function ShopProductItem({ product, index }: { product: ShopProduct; index: number }) {
   return (
     <div
-      className={`flex flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] w-[330px] xl:w-[388.333px] box-border outline outline-1 outline-gray-200 ${
+      className={`flex flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] xl:w-full w-[330px] xl:max-w-[388.333px] box-border border border-gray-200 h-[300px] xl:h-auto ${
         index % 2 === 0 ? 'xl:translate-y-22' : ''
       }`}
     >
@@ -38,7 +38,7 @@ function ShopProductItem({ product, index }: { product: ShopProduct; index: numb
         </p>
       </div>
       
-      <div className="flex p-1.5 justify-between items-center self-stretch rounded-2xl bg-white box-border outline outline-1 outline-gray-200">
+      <div className="flex p-1.5 justify-between items-center self-stretch rounded-2xl bg-white box-border border border-gray-200">
         <div className="flex-1">
           <div className="relative h-12 flex items-center justify-start">
             <Image
@@ -91,7 +91,7 @@ const shopProducts: ShopProduct[] = [
 
 export default function SwiperDemo({ swiperRef }: ShopSwiperProps) {
   return (
-    <div className="shop-swiper-container w-full md:max-w-[700px] xl:max-w-[1258px] mx-auto">
+    <div className="shop-swiper-container w-full md:max-w-[700px] xl:max-w-[1270px] mx-auto">
       <Swiper
         freeMode={true}
         onSwiper={(swiper) => {
@@ -132,7 +132,7 @@ export default function SwiperDemo({ swiperRef }: ShopSwiperProps) {
         }}
       >
         {shopProducts.map((product, index) => (
-          <SwiperSlide key={product.id} className='xl:min-h-[420px]'>
+          <SwiperSlide key={product.id} className='h-full min-h-[290px] xl:min-h-[420px]'>
             <ShopProductItem product={product} index={index} />
           </SwiperSlide>
         ))}

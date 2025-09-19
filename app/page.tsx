@@ -429,7 +429,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
           style={{
-            backgroundImage: 'url(/imgs/home-shop-bg.png)',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(/imgs/home-shop-bg.png)',
             left: '0px',
             right: '0px',
             width: '100%'
