@@ -300,27 +300,28 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="bg-white text-[#181D27] px-4 pt-20 relative">
+        {/* Backgrounds anchored to viewport edges to avoid overflow */}
+        <div 
+          className="pointer-events-none absolute top-0 left-0 h-full z-0 opacity-60"
+          style={{ 
+            width: '50vw',
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'left center'
+          }}
+        ></div>
+        <div 
+          className="pointer-events-none absolute top-0 right-0 h-full z-0 opacity-60"
+          style={{ 
+            width: '50vw',
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'right center'
+          }}
+        ></div>
         <div className="max-w-[1194px] w-full mx-auto relative">
-          <div 
-            className="absolute top-0 w-1/2 h-full z-0 opacity-60"
-            style={{ 
-              backgroundImage: 'url(/imgs/service-card-bg.png)',
-              backgroundRepeat: 'repeat-y',
-              backgroundSize: '529.548px 529px',
-              backgroundPosition: 'left center',
-              left: 'calc(-50vw + 50% - 1rem)' // Extend to viewport edge
-            }}
-          ></div>
-          <div 
-            className="absolute top-0 w-1/2 h-full z-0 opacity-60"
-            style={{ 
-              backgroundImage: 'url(/imgs/service-card-bg.png)',
-              backgroundRepeat: 'repeat-y',
-              backgroundSize: '529.548px 529px',
-              backgroundPosition: 'right center',
-              right: 'calc(-50vw + 50% - 1rem)' // Extend to viewport edge
-            }}
-          ></div>
           {/* Title */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
