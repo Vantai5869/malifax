@@ -92,7 +92,7 @@ export default function Navigation() {
   return (
     <>
       <nav 
-        className={`fixed inset-x-0 top-0 px-2 lg:px-[22.5px] mt-2 lg:mt-6 w-screen max-w-none z-50 transition-opacity duration-300 ${
+        className={`fixed inset-x-0 top-0 px-2 lg:px-[24px] lg:pr-[24px] mt-2 lg:mt-6 w-screen max-w-none z-50 transition-opacity duration-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
