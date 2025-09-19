@@ -15,14 +15,14 @@ import WhyChoose from '@/app/components/solutions/WhyChoose';
 export default function CCTVDoorAccessPage() {
   return (
     <div className="">
-      <SolutionHero 
+      <SolutionHero
         imageSrc="/imgs/solution/cctv-door-access.png"
         title="CCTV & Door Access"
         rightMinWidth="min-w-[239px]"
         rightMaxWidth="max-w-[426px]"
       />
 
-      <ContentHeaderSection 
+      <ContentHeaderSection
         title="CCTV & Door Access System"
         description="At Malifax Technologies, we understand the importance of securing your premises. Our advanced CCTV and Door Access Systems provide comprehensive security solutions to protect your business, employees, and assets."
       />
@@ -179,7 +179,7 @@ export default function CCTVDoorAccessPage() {
               <span className="text-[#181D27]">Our CCTV & Door Access Systems</span>
             </h2>
           </div>
-          
+
           {/* Right Side - Benefits Cards Grid */}
           <div className="w-full xl:w-auto">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
@@ -203,22 +203,47 @@ export default function CCTVDoorAccessPage() {
           </div>
         </motion.div>
 
-        <LogoGrid
-          positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-          wideLogoNumbers={[2, 4, 6, 8]}
-          srcPrefix="/svgs/solution/business-i"
-          ext=".svg"
-          containerClassName="mt-[47px] mb-14"
-        />
+        {(() => {
+          const iconsDesktop = [
+            { position: 3, src: '/svgs/solution/cctv-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 8, src: '/svgs/solution/cctv-i2.svg', alt: 'Logo 2', size: 2 },
+            { position: 17, src: '/svgs/solution/cctv-i3.svg', alt: 'Logo 3', size: 2 },
+          ];
+          const iconsMobile = [
+            { position: 9, src: '/svgs/solution/cctv-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 4, src: '/svgs/solution/cctv-i2.svg', alt: 'Logo 2', size: 2 },
+            { position: 13, src: '/svgs/solution/cctv-i3.svg', alt: 'Logo 3', size: 2 },
+          ];
+          return (
+            <>
+              <div className="hidden xl:block">
+                <LogoGrid
+                  icons={iconsDesktop}
+                  totalSlots={24}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+              <div className="block xl:hidden">
+                <LogoGrid
+                  icons={iconsMobile}
+                  totalSlots={21}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+            </>
+
+
+          );
+        })()}
       </section>
 
-      <CTABanner 
+      <CTABanner
         title="Get Started with Malifax Technologies CCTV & Door Access Systems"
         description="Secure your business with our state-of-the-art CCTV and Door Access Systems. Contact us today to learn more about how we can help you enhance the security of your premises."
         buttonText="Contact us now!"
         buttonLink="/contact"
       />
-      
+
       <Footer />
     </div>
   );

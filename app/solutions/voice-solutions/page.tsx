@@ -117,13 +117,43 @@ export default function VoiceSolutionsPage() {
         </div>
       </section>
 
-      <LogoGrid
-        positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-        wideLogoNumbers={[2, 4, 6, 8]}
-        srcPrefix="/svgs/solution/business-i"
-        ext=".svg"
-        containerClassName="mt-[48px] mb-14 xl:mt-[81px] mb-[29px] xl:mb-[72px]"
-      />
+      {(() => {
+        const iconsDesktop = [
+          { position: 3, src: '/svgs/solution/voice-i1.svg', alt: 'Logo 1', size: 1 },
+          { position: 9, src: '/svgs/solution/voice-i2.svg', alt: 'Logo 2', size: 2 },
+          { position: 13, src: '/svgs/solution/voice-i3.svg', alt: 'Logo 3', size: 2 },
+          { position: 17, src: '/svgs/solution/voice-i4.svg', alt: 'Logo 4', size: 2 },
+          { position: 22, src: '/svgs/solution/voice-i5.svg', alt: 'Logo 5', size: 1 },
+          { position: 27, src: '/svgs/solution/voice-i6.svg', alt: 'Logo 6', size: 2 },
+          { position: 32, src: '/svgs/solution/voice-i7.svg', alt: 'Logo 7', size: 2 },
+        ];
+        const iconsMobile = [
+          { position: 5, src: '/svgs/solution/voice-i1.svg', alt: 'Logo 1', size: 1 },
+          { position: 0, src: '/svgs/solution/voice-i2.svg', alt: 'Logo 2', size: 2 },
+          { position: 13, src: '/svgs/solution/voice-i3.svg', alt: 'Logo 3', size: 2 },
+          { position: 18, src: '/svgs/solution/voice-i4.svg', alt: 'Logo 4', size: 2 },
+          { position: 9, src: '/svgs/solution/voice-i5.svg', alt: 'Logo 5', size: 1 },
+          // { position: 25, src: '/svgs/solution/voice-i6.svg', alt: 'Logo 6', size: 2 },
+          { position: 25, src: '/svgs/solution/voice-i7.svg', alt: 'Logo 7', size: 2 },
+        ];
+        return (
+          <>
+            <div className="hidden xl:block">
+              <LogoGrid
+                icons={iconsDesktop}
+                containerClassName="mt-[48px] mb-14 xl:mt-[81px] mb-[29px] xl:mb-[72px]"
+              />
+            </div>
+            <div className="block xl:hidden">
+              <LogoGrid
+                icons={iconsMobile}
+                totalSlots={27}
+                containerClassName="mt-[48px] mb-14 xl:mt-[81px] mb-[29px] xl:mb-[72px]"
+              />
+            </div>
+          </>
+        );
+      })()}
 
 
       <CTABanner

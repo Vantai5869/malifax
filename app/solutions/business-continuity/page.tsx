@@ -12,7 +12,7 @@ import ServiceCard from '../../components/solutions/ServiceCard';
 export default function BusinessContinuityPage() {
   return (
     <div className="min-h-screen">
-      <SolutionHero 
+      <SolutionHero
         imageSrc="/imgs/solution/business-conti.png"
         title="Business Continuity"
         rightMaxWidth="max-w-[351px]"
@@ -34,7 +34,7 @@ export default function BusinessContinuityPage() {
                 <p className='text-[#181D27]'>Offerings</p>
               </div>
             </motion.div>
-            
+
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="self-stretch text-[#181D27] font-['Plus_Jakarta_Sans'] text-[14px] lg:text-[18px] font-normal leading-[20px] lg:leading-[28px] mt-9">
               Malifax Technologies offers the following solutions and services in helping businesses protect against data loss.
             </motion.div>
@@ -72,20 +72,53 @@ export default function BusinessContinuityPage() {
           </div>
         </motion.div>
 
-       <LogoGrid
-          positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-          wideLogoNumbers={[2, 4, 6, 8]}
-          srcPrefix="/svgs/solution/business-i"
-          ext=".svg"
-          containerClassName="mt-[47px] mb-14"
-        />
+        {(() => {
+          const iconsDesktop = [
+            { position: 3, src: '/svgs/solution/business-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 8, src: '/svgs/solution/business-i2.svg', alt: 'Logo 2', size: 2 },
+            { position: 13, src: '/svgs/solution/business-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 18, src: '/svgs/solution/business-i4.svg', alt: 'Logo 4', size: 2 },
+            { position: 19, src: '/svgs/solution/business-i5.svg', alt: 'Logo 5', size: 1 },
+            { position: 26, src: '/svgs/solution/business-i6.svg', alt: 'Logo 6', size: 2 },
+            { position: 29, src: '/svgs/solution/business-i7.svg', alt: 'Logo 7', size: 1 },
+            { position: 33, src: '/svgs/solution/business-i8.svg', alt: 'Logo 8', size: 2 },
+          ];
+          const iconsMobile = [
+            { position: 9, src: '/svgs/solution/business-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 25, src: '/svgs/solution/business-i2.svg', alt: 'Logo 2', size: 2 },
+            { position: 5, src: '/svgs/solution/business-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 18, src: '/svgs/solution/business-i4.svg', alt: 'Logo 4', size: 2 },
+            { position: 32, src: '/svgs/solution/business-i5.svg', alt: 'Logo 5', size: 1 },
+            { position: 13, src: '/svgs/solution/business-i6.svg', alt: 'Logo 6', size: 2 },
+            { position: 33, src: '/svgs/solution/business-i7.svg', alt: 'Logo 7', size: 1 },
+            { position: 0, src: '/svgs/solution/business-i8.svg', alt: 'Logo 8', size: 2 },
+          ];
+          return (
+            <>
+              <div className="hidden xl:block">
+                <LogoGrid
+                  icons={iconsDesktop}
+                  totalSlots={36}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+              <div className="block xl:hidden">
+                <LogoGrid
+                  icons={iconsMobile}
+                  totalSlots={36}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+            </>
+          );
+        })()}
       </section>
 
       <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-        <CTABanner 
-        description="Protect your business with our comprehensive IT Business Continuity and Disaster Recovery solutions. Contact us today to learn more about how we can help you ensure the continuity and resilience of your business operations."
-        buttonText="Contact us now!"
-        buttonLink="/contact"
+        <CTABanner
+          description="Protect your business with our comprehensive IT Business Continuity and Disaster Recovery solutions. Contact us today to learn more about how we can help you ensure the continuity and resilience of your business operations."
+          buttonText="Contact us now!"
+          buttonLink="/contact"
         />
       </motion.div>
 

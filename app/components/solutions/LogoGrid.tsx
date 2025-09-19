@@ -4,40 +4,63 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface LogoGridProps {
-  positions: number[]; // 0-based slot positions where logos appear
-  totalSlots?: number; // default 36
-  wideLogoNumbers?: number[]; // logo order numbers (1-based) that should be wide (e.g., [2,4,6,8])
-  srcPrefix?: string; // path/prefix before number
-  ext?: string; // file extension including dot, default '.svg'
-  containerClassName?: string;
+  // Explicit API: each icon has a position and size
+  // position is 0-based slot index
+  // size: 1 => occupies 1 cell, 2 => occupies 2 cells (blocks next slot)
+  icons: Array<{
+    position: number;
+    src: string;
+    alt?: string;
+    size?: number;
+    imgWidth?: number;
+    imgHeight?: number;
+    bgClassName?: string;
+  }>;
+  totalSlots?: number; // total number of slots to render (default auto)
+  containerClassName?: string; // extra classes for outer container
+  cellSizePx?: number; // base cell size (default 100)
+  gapPx?: number; // gap between cells (default 12 ~ gap-3)
 }
 
-// Renders a flex-wrap grid with 100px cells (gap-3). Wide items occupy 2 cells + 1 gap using calc.
+// Renders a flex-wrap grid with N px cells. Wide items occupy 2 cells + 1 gap.
 const LogoGrid: React.FC<LogoGridProps> = ({
-  positions,
-  totalSlots = 36,
-  wideLogoNumbers = [],
-  srcPrefix = '/svgs/solution/business-i',
-  ext = '.svg',
+  icons,
+  totalSlots,
   containerClassName = '',
+  cellSizePx = 100,
+  gapPx = 12,
 }) => {
+  // Map positions to icons for O(1) access
+  const positionToIcon = new Map<number, LogoGridProps['icons'][number]>();
+  for (const icon of icons) {
+    positionToIcon.set(icon.position, icon);
+  }
+  const desiredTotal = totalSlots ?? Math.max(36, icons.length * 2); // safe default
+  const blockedPositions = new Set<number>();
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`flex flex-col justify-center items-center gap-3 w-full max-w-[1440px] mx-auto ${containerClassName}`}
+      className={`flex flex-col justify-center items-center w-full max-w-[1440px] mx-auto ${containerClassName}`}
     >
-      <div className="flex flex-wrap justify-center items-center gap-3 w-full">
-        {Array.from({ length: totalSlots }, (_, index) => {
-          const logoIndex = positions.indexOf(index);
-          const hasLogo = logoIndex !== -1;
-          const logoNumber = logoIndex + 1;
-          const isWide = wideLogoNumbers.includes(logoNumber);
+      <div
+        className="flex flex-wrap justify-center items-center w-full"
+        style={{ gap: `${gapPx}px` }}
+      >
+        {Array.from({ length: desiredTotal }, (_, index) => {
+          if (blockedPositions.has(index)) return null;
+          const icon = positionToIcon.get(index);
+          const hasIcon = Boolean(icon);
+          const size = icon?.size === 2 ? 2 : 1;
+          const cellWidth = size === 2 ? cellSizePx * 2 + gapPx : cellSizePx;
+          const cellHeight = cellSizePx;
+          const bgClass = hasIcon ? (icon?.bgClassName ?? 'bg-[rgb(4,82,216)]') : 'bg-[#F5F5F5]';
 
-          if (hasLogo && isWide && positions.includes(index + 1)) {
-            return null;
+          if (hasIcon && size === 2) {
+            blockedPositions.add(index + 1);
           }
 
           return (
@@ -47,15 +70,16 @@ const LogoGrid: React.FC<LogoGridProps> = ({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.02 * index }}
-              className={`${isWide ? 'w-[calc(200px+0.75rem)] flex-none' : 'w-[100px] flex-none'} h-[100px] aspect-square rounded-lg flex items-center justify-center ${hasLogo ? 'bg-[rgb(4,82,216)]' : 'bg-[#F5F5F5]'} `}
+              className={`flex-none rounded-lg flex items-center justify-center ${bgClass}`}
+              style={{ width: `${cellWidth}px`, height: `${cellHeight}px` }}
             >
-              {hasLogo && (
+              {hasIcon && (
                 <Image
-                  src={`${srcPrefix}${logoNumber}${ext}`}
-                  alt={`Logo ${logoNumber}`}
-                  width={isWide ? 120 : 60}
-                  height={60}
-                  className={`${isWide ? 'w-[120px]' : 'w-[60px]'} h-[60px]`}
+                  src={icon!.src}
+                  alt={icon!.alt ?? 'Logo'}
+                  width={icon!.imgWidth ?? (size === 2 ? 120 : 60)}
+                  height={icon!.imgHeight ?? 60}
+                  className="object-contain"
                 />
               )}
             </motion.div>

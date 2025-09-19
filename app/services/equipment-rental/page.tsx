@@ -153,13 +153,38 @@ export default function EquipmentRentalPage() {
         </div>
       </section>
       <section className="bg-white">
-        <LogoGrid
-          positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-          wideLogoNumbers={[2, 4, 6, 8]}
-          srcPrefix="/svgs/solution/business-i"
-          ext=".svg"
-          containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
-        />
+        {(() => {
+          const iconsDesktop = [
+            { position: 3, src: '/svgs/solution/rental-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 10, src: '/svgs/solution/rental-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 16, src: '/svgs/solution/rental-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 32, src: '/svgs/solution/rental-i4.svg', alt: 'Logo 4', size: 1 },
+          
+          ];
+          const iconsMobile = [
+            { position: 0, src: '/svgs/solution/rental-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 5, src: '/svgs/solution/rental-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 9, src: '/svgs/solution/rental-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 18, src: '/svgs/solution/rental-i4.svg', alt: 'Logo 4', size: 1 },
+          ];
+          return (
+            <>
+              <div className="hidden xl:block">
+                <LogoGrid
+                  icons={iconsDesktop}
+                  containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
+                />
+              </div>
+              <div className="block xl:hidden">
+                <LogoGrid
+                  icons={iconsMobile}
+                  totalSlots={27}
+                  containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
+                />
+              </div>
+            </>
+          );
+        })()}
       </section>
       <motion.div
         initial={{ opacity: 0, y: 30 }}

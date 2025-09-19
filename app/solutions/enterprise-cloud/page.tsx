@@ -60,13 +60,42 @@ export default function EnterpriseCloudPage() {
             </div>
           </motion.div>
         </motion.div>
-        <LogoGrid
-          positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-          wideLogoNumbers={[2, 4, 6, 8]}
-          srcPrefix="/svgs/solution/business-i"
-          ext=".svg"
-          containerClassName="mt-[47px] mb-14"
-        />
+        {(() => {
+          const iconsDesktop = [
+            { position: 3, src: '/svgs/solution/cloud-i1.svg', alt: 'Logo 1', size: 2 },
+            { position: 10, src: '/svgs/solution/cloud-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 13, src: '/svgs/solution/cloud-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 19, src: '/svgs/solution/cloud-i4.svg', alt: 'Logo 4', size: 2 },
+            { position: 28, src: '/svgs/solution/cloud-i5.svg', alt: 'Logo 5', size: 2 },
+            { position: 33, src: '/svgs/solution/cloud-i6.svg', alt: 'Logo 6', size: 1 },
+          ];
+          const iconsMobile = [
+            { position: 0, src: '/svgs/solution/cloud-i1.svg', alt: 'Logo 1', size: 2 },
+            { position: 5, src: '/svgs/solution/cloud-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 9, src: '/svgs/solution/cloud-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 18, src: '/svgs/solution/cloud-i4.svg', alt: 'Logo 4', size: 2 },
+            { position: 13, src: '/svgs/solution/cloud-i5.svg', alt: 'Logo 5', size: 2 },
+            { position: 25, src: '/svgs/solution/cloud-i6.svg', alt: 'Logo 6', size: 1 },
+          ];
+          return (
+            <>
+              <div className="hidden xl:block">
+                <LogoGrid
+                  icons={iconsDesktop}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+              <div className="block xl:hidden">
+                <LogoGrid
+                  icons={iconsMobile}
+                  totalSlots={27}
+                  containerClassName="mt-[47px] mb-14"
+                />
+              </div>
+            </>
+            
+          );
+        })()}
       </section>
 
       <CTABanner 

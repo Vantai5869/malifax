@@ -88,13 +88,43 @@ export default function NetworkingWifiPage() {
        
       </section>
       <section className="bg-white">
-        <LogoGrid
-          positions={[4, 9, 10, 15, 20, 21, 25, 28]}
-          wideLogoNumbers={[2, 4, 6, 8]}
-          srcPrefix="/svgs/solution/business-i"
-          ext=".svg"
-          containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
-        />
+        {(() => {
+          const iconsDesktop = [
+            { position: 3, src: '/svgs/solution/networking-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 10, src: '/svgs/solution/networking-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 13, src: '/svgs/solution/networking-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 16, src: '/svgs/solution/networking-i4.svg', alt: 'Logo 4', size: 1 },
+            { position: 19, src: '/svgs/solution/networking-i5.svg', alt: 'Logo 5', size: 1 },
+            { position: 27, src: '/svgs/solution/networking-i6.svg', alt: 'Logo 6', size: 1 },
+            { position: 32, src: '/svgs/solution/networking-i7.svg', alt: 'Logo 7', size: 2 },
+          ];
+          const iconsMobile = [
+            { position: 9, src: '/svgs/solution/networking-i1.svg', alt: 'Logo 1', size: 1 },
+            { position: 25, src: '/svgs/solution/networking-i2.svg', alt: 'Logo 2', size: 1 },
+            { position: 20, src: '/svgs/solution/networking-i3.svg', alt: 'Logo 3', size: 1 },
+            { position: 12, src: '/svgs/solution/networking-i4.svg', alt: 'Logo 4', size: 1 },
+            { position: 8, src: '/svgs/solution/networking-i5.svg', alt: 'Logo 5', size: 1 },
+            { position: 16, src: '/svgs/solution/networking-i6.svg', alt: 'Logo 6', size: 1 },
+            { position: 0, src: '/svgs/solution/networking-i7.svg', alt: 'Logo 7', size: 2 },
+          ];
+          return (
+            <>
+              <div className="hidden xl:block">
+                <LogoGrid
+                  icons={iconsDesktop}
+                  containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
+                />
+              </div>
+              <div className="block xl:hidden">
+                <LogoGrid
+                  icons={iconsMobile}
+                  totalSlots={21}
+                  containerClassName="mt-[48px] mb-14 xl:mt-[200px]"
+                />
+              </div>
+            </>
+          );
+        })()}
       </section>
 
       <CTABanner
