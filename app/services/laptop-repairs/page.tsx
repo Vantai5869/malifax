@@ -7,6 +7,7 @@ import WhyChoose from '../../components/solutions/WhyChoose';
 import CTABanner from '../../components/CTABanner';
 import Footer from '../../components/Footer';
 import AccessSystemItem from '../../components/AccessSystemItem';
+import RepairServicesGrid, { RepairServiceItem } from '../../components/solutions/RepairServicesGrid';
 import GridSection from '@/app/components/solutions/GridSection';
 
 export default function LaptopRepairsPage() {
@@ -162,6 +163,26 @@ export default function LaptopRepairsPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Repairs showcase grid (desktop 3x3, mobile stacked) */}
+      <section className="bg-white py-10">
+        <div className="max-w-[1194px] mx-auto px-4 xl:px-0">
+          {(() => {
+            const items: RepairServiceItem[] = [
+              { title: 'Screen repair', imageSrc: '/imgs/laptop/screen.png' },
+              { title: 'Keyboard repair', imageSrc: '/imgs/laptop/keyboard.png' },
+              { title: 'Power Adapter', imageSrc: '/imgs/laptop/adapter.png' },
+              { title: 'Battery replacement', imageSrc: '/imgs/laptop/battery.png' },
+              { title: 'Motherboard repair', imageSrc: '/imgs/laptop/motherboard.png' },
+              { title: 'Hinge repair', imageSrc: '/imgs/laptop/hinge.png' },
+              { title: 'SSD Storage replacement / upgrade', imageSrc: '/imgs/laptop/ssd.png' },
+              { title: 'Ram replacement / upgrade', imageSrc: '/imgs/laptop/ram.png' },
+              { title: 'Speaker Replacement', imageSrc: '/imgs/laptop/speaker.png' },
+            ];
+            return <RepairServicesGrid items={items} />;
+          })()}
         </div>
       </section>
 
