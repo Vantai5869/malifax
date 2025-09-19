@@ -299,15 +299,35 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-white text-[#181D27] px-4 pt-20">
-        <div className="max-w-[1194px] w-full mx-auto">
+      <section className="bg-white text-[#181D27] px-4 pt-20 relative">
+        <div className="max-w-[1194px] w-full mx-auto relative">
+          <div 
+            className="absolute top-0 w-1/2 h-full z-0 opacity-60"
+            style={{ 
+              backgroundImage: 'url(/imgs/service-card-bg.png)',
+              backgroundRepeat: 'repeat-y',
+              backgroundSize: '529.548px 529px',
+              backgroundPosition: 'left center',
+              left: 'calc(-50vw + 50% - 1rem)' // Extend to viewport edge
+            }}
+          ></div>
+          <div 
+            className="absolute top-0 w-1/2 h-full z-0 opacity-60"
+            style={{ 
+              backgroundImage: 'url(/imgs/service-card-bg.png)',
+              backgroundRepeat: 'repeat-y',
+              backgroundSize: '529.548px 529px',
+              backgroundPosition: 'right center',
+              right: 'calc(-50vw + 50% - 1rem)' // Extend to viewport edge
+            }}
+          ></div>
           {/* Title */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center"
+            className="text-center relative z-10"
           >
             <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] leading-[38px] tracking-[0%] xl:text-[60px] xl:leading-[72px] xl:tracking-[-0.02em] text-center">
               <span className="text-blue-500">Services</span> we provide
@@ -325,7 +345,7 @@ export default function Home() {
             {/* Services Content */}
             <div className="relative z-10">
               <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 xl:gap-8 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 xl:gap-8 w-full items-stretch">
                   {services.map((service, index) => (
                     <motion.div
                       key={index}
@@ -333,6 +353,7 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
+                      className="flex"
                     >
                       <ServiceCard 
                         icon={service.icon}

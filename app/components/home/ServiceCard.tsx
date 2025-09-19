@@ -11,9 +11,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ icon, title, description, onClick }: ServiceCardProps) {
   return (
-    <div className="flex flex-col gap-3 xl:gap-3 w-[343px] xl:w-[581px] p-3 xl:p-3 rounded-[22px] xl:rounded-[22px] bg-white box-border outline outline-1 outline-[#E9EAEB]">
+    <div className="flex flex-col gap-3 xl:gap-3 w-[343px] xl:w-[581px] p-3 xl:p-3 rounded-[22px] xl:rounded-[22px] bg-white box-border outline outline-1 outline-[#E9EAEB] flex-1">
       {/* Inner border with gradient background */}
-      <div className="flex h-full flex-col gap-4 xl:gap-4 w-[319px] xl:w-[557px] p-6 xl:p-6 rounded-2xl xl:rounded-2xl bg-gradient-to-tr from-[#ECF9FF] to-white box-border outline outline-1 outline-[#E9EAEB]">
+      <div className="flex flex-col gap-4 xl:gap-4 w-[319px] xl:w-[557px] p-6 xl:p-6 rounded-2xl xl:rounded-2xl bg-gradient-to-tr from-[#ECF9FF] to-white box-border outline outline-1 outline-[#E9EAEB] flex-1">
         {/* Header section with icon, title and button (desktop) */}
         <div className="flex items-center justify-between gap-3 xl:gap-3">
           {/* Icon and Title - on same line for both mobile and desktop */}
