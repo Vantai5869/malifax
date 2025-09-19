@@ -16,7 +16,7 @@ const DROPDOWN_ITEMS = [
       { icon: <Image src="/svgs/solution-it-infrastructure.svg" alt="IT Infrastructure Services" width={34} height={24} className="w-5 h-5 lg:w-[34px] lg:h-6" />, text: 'IT Infrastructure Services', href: '/solutions/it-infrastructure' },
       { icon: <Image src="/svgs/solution-managed-services.svg" alt="Managed Services" width={34} height={24} className="w-5 h-5 lg:w-[34px] lg:h-6" />, text: 'Managed Services', href: '/solutions/managed-services' },
       { icon: <Image src="/svgs/solution-networking-wifi.svg" alt="Networking & Enterprise Wi-Fi" width={34} height={24} className="w-5 h-5 lg:w-[34px] lg:h-6" />, text: 'Networking & Enterprise Wi-Fi', href: '/solutions/networking-wifi' },
-      { icon: <Image src="/svgs/solution-voice-solutions.svg" alt="Voice Solutions" width={34} height={24} className="w-5 h-5 lg:h-6" />, text: 'Voice Solutions', href: '/solutions/voice-solutions' },
+      { icon: <Image src="/svgs/solution-voice-solutions.svg" alt="Voice Solutions" width={34} height={24} className="w-5 h-5 lg:w-[34px] lg:h-6" />, text: 'Voice Solutions', href: '/solutions/voice-solutions' },
     ],
   },
   {
