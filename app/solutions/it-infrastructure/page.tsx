@@ -42,7 +42,7 @@ export default function ITInfrastructurePage() {
 
               return services.map((service, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 * index }} className="flex w-full flex-col items-end gap-3 p-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD] self-stretch">
-                  <div className="flex p-4 items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-[linear-gradient(247deg,#ECF9FF_0%,#FFF_100%)]">
+                  <div className="flex p-4 items-center gap-4 self-stretch rounded-2xl outline outline-1 outline-[#E9EAEB] bg-[linear-gradient(247deg,#FFF_0%,#ECF9FF_100%)]">
                     <Image
                       src={service.iconSrc}
                       alt={`${service.title} Icon`}

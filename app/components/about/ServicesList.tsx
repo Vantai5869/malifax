@@ -14,7 +14,7 @@ interface ServicesListProps {
 export default function ServicesList({ items }: ServicesListProps) {
   const ServiceCard = ({ image, title, description }: ServiceItem) => (
     <div className="flex xl:min-h-[620px] flex-col p-3 gap-3 items-end self-stretch rounded-[22px] bg-[#FDFDFD] box-border outline outline-1 outline-[#E9EAEB]">
-      <div className="flex h-full flex-col p-[10px] pt-6 gap-4 items-center self-stretch rounded-2xl bg-[linear-gradient(247deg,#ECF9FF_0%,#FFF_100%)] box-border outline outline-1 outline-[#E9EAEB]">
+      <div className="flex h-full flex-col p-[10px] pt-6 gap-4 items-center self-stretch rounded-2xl bg-[linear-gradient(247deg,#FFF_0%,#ECF9FF_100%)] box-border outline outline-1 outline-[#E9EAEB]">
         {/* Image */}
         <div className="w-[200px]  px-[49.5px]  w-full">
           <Image
