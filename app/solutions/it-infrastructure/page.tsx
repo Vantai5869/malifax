@@ -31,12 +31,12 @@ export default function ITInfrastructurePage() {
             {(() => {
               const services = [
                 { title: "Physical server installation", iconSrc: "/svgs/tag36_36.svg" },
+                { title: "Gateway configuration", iconSrc: "/svgs/tag36_36.svg" },
                 { title: "Server rack", iconSrc: "/svgs/tag36_36.svg" },
                 { title: "Server virtualisation", iconSrc: "/svgs/tag36_36.svg" },
+                { title: "Server virtualisation", iconSrc: "/svgs/tag36_36.svg" },
+                { title: "Server virtualisation", iconSrc: "/svgs/tag36_36.svg" },
                 { title: "Uninterruptible power supply (UPS)", iconSrc: "/svgs/tag36_36.svg" },
-                { title: "Gateway configuration", iconSrc: "/svgs/tag36_36.svg" },
-                { title: "Server virtualisation", iconSrc: "/svgs/tag36_36.svg" },
-                { title: "Server virtualisation", iconSrc: "/svgs/tag36_36.svg" },
                 { title: "Wired and wireless local area network (LAN) solutions", iconSrc: "/svgs/tag36_36.svg" }
               ];
 
