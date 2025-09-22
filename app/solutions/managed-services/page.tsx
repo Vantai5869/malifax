@@ -10,11 +10,11 @@ import AccessSystemItem from '../../components/AccessSystemItem';
 
 export default function ManagedServicesPage() {
   const gridItems = [
-    { title: "Expertise", description: "Leverage our deep industry knowledge and technical expertise to manage your IT infrastructure effectively." },
-    { title: "Cost–Efficiency", description: "Reduce operational costs and optimize IT spending with our efficient managed services." },
-    { title: "Scalability", description: "Scale your IT resources up or down as needed, ensuring your infrastructure grows with your business." },
-    { title: "Proactive Monitoring", description: "Benefit from 24/7 monitoring and proactive issue resolution, minimizing downtime and disruptions." },
-    { title: "Enhanced Security", description: "Protect your business with robust security measures and continuous threat monitoring." }
+    { title: "Expertise", description: "Gain access to a team of experienced IT professionals who provide proactive management and support." },
+    { title: "Cost-Efficiency", description: "Reduce operational costs with our predictable, flat-rate pricing model." },
+    { title: "Scalability", description: "Easily scale your IT services to match the growth and changing needs of your business." },
+    { title: "Proactive Monitoring", description: "Continuous monitoring of your IT environment to detect and resolve issues before they impact your operations." },
+    { title: "Enhanced Security", description: "Protect your IT infrastructure with our advanced security measures and compliance-focused solutions." }
   ];
 
   return (

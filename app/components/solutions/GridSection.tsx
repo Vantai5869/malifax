@@ -49,7 +49,7 @@ export default function GridSection({ items, className = '' }: GridSectionProps)
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.05 * index }}
-                className={`flex flex-col w-full xl:flex-1 p-6 gap-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'xl:w-[449px]' : 'xl:w-[234px]'}`}
+                className={`flex flex-col w-full xl:flex-1 p-6 gap-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.20),0_2px_4px_-2px_rgba(10,69,158,0.15)] ${items.length === 2 ? 'xl:w-[449px]' : 'xl:w-[234px]'}`}
               >
                 <h3 className="text-[#181D27] font-['Plus_Jakarta_Sans'] text-xl font-semibold leading-[30px]">
                   {item.title}
