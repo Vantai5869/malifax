@@ -21,24 +21,24 @@ export default function GridSection({ items, className = '' }: GridSectionProps)
           {/* Top half squares - dynamic based on items count (only show on xl and up) */}
           <div className="hidden xl:flex justify-center gap-[6px] mb-[6px]">
             {/* Left half square */}
-            <div className={`h-[117px] border-r border-l border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-br-[22px] rounded-bl-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`h-[117px] bg-[#FDFDFD] opacity-40 rounded-br-[22px] rounded-bl-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
             
             {/* Main top squares */}
             {Array.from({ length: items.length }, (_, index) => (
               <div 
                 key={`top-${index}`} 
-                className={`h-[117px] border-l border-r border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-bl-[22px] rounded-br-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}
+                className={`h-[117px] bg-[#FDFDFD] opacity-60 rounded-bl-[22px] rounded-br-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}
               ></div>
             ))}
             
             {/* Right half square */}
-            <div className={`h-[117px] border-l border-r border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-bl-[22px] rounded-br-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`h-[117px] bg-[#FDFDFD] opacity-40 rounded-bl-[22px] rounded-br-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
           </div>
 
           {/* Middle row - 2 half squares + main content squares + 2 half squares */}
           <div className="flex justify-center gap-[6px]">
             {/* Left half square */}
-            <div className={`hidden xl:block  border-t border-r border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tr-[22px] rounded-br-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`hidden xl:block bg-[#FDFDFD] opacity-40 rounded-tr-[22px] rounded-br-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
             
             {/* Main content squares */}
           <div className="grid grid-cols-2 gap-[6px] justify-center xl:flex xl:flex-nowrap xl:gap-[6px] xl:items-stretch">
@@ -62,24 +62,24 @@ export default function GridSection({ items, className = '' }: GridSectionProps)
           </div>
             
             {/* Right half square */}
-            <div className={`hidden xl:block  border-t border-l border-b border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tl-[22px] rounded-bl-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`hidden xl:block bg-[#FDFDFD] opacity-40 rounded-tl-[22px] rounded-bl-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
           </div>
 
           {/* Bottom half squares - dynamic based on items count (only show on xl and up) */}
           <div className="hidden xl:flex justify-center gap-[6px] mt-[6px]">
             {/* Left half square */}
-            <div className={`h-[117px] border-t border-r border-l border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tr-[22px] rounded-tl-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`h-[117px] bg-[#FDFDFD] opacity-40 rounded-tr-[22px] rounded-tl-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
             
             {/* Main bottom squares */}
             {Array.from({ length: items.length }, (_, index) => (
               <div 
                 key={`bottom-${index}`} 
-                className={`h-[117px] border-l border-r border-t border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tl-[22px] rounded-tr-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}
+                className={`h-[117px] bg-[#FDFDFD] opacity-60 rounded-tl-[22px] rounded-tr-[22px] shadow-[0_-4px_8px_-2px_rgba(10,69,158,0.10),0_-2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}
               ></div>
             ))}
             
             {/* Right half square */}
-            <div className={`h-[117px] border-t border-l border-r border-[#E9EAEB] bg-[#FDFDFD] opacity-80 rounded-tl-[22px] rounded-tr-[22px] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
+            <div className={`h-[117px] bg-[#FDFDFD] opacity-40 rounded-tl-[22px] rounded-tr-[22px] shadow-[0_4px_8px_-2px_rgba(10,69,158,0.10),0_2px_4px_-2px_rgba(10,69,158,0.06)] ${items.length === 2 ? 'w-[449px]' : 'w-[234px]'}`}></div>
           </div>
         </div>
       </div>
