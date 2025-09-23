@@ -51,10 +51,11 @@ const PartnershipNetwork: React.FC = () => {
     { name: "Partner 7-5", logo: "partner_7_5", angle: 328, radius: 511 }
   ];
 
+  const round3 = (n: number) => Math.round(n * 1000) / 1000;
   const getPosition = (radius: number, angle: number) => {
     const radian = (angle * Math.PI) / 180;
-    const x = centerX + radius * Math.cos(radian);
-    const y = centerY + radius * Math.sin(radian);
+    const x = round3(centerX + radius * Math.cos(radian));
+    const y = round3(centerY + radius * Math.sin(radian));
     return { x, y };
   };
 

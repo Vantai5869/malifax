@@ -134,8 +134,27 @@ export default function CCTVDoorAccessPage() {
       </section>
 
       {/* Our CCTV & Door Access Systems Section */}
-      <section className="mt-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-[1194px] mx-auto px-4 xl:px-0">
+      <section className="mt-20 relative">
+        {/* Striped Backgrounds - left and right */}
+        <div
+          className="hidden xl:block absolute left-0 top-24 bottom-0 w-[50vw] z-0 opacity-60 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'left center',
+          }}
+        />
+        <div
+          className="hidden xl:block absolute right-0 top-24 bottom-0 w-[50vw] z-0 opacity-60 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'right center',
+          }}
+        />
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative z-10 max-w-[1194px] mx-auto px-4 xl:px-0">
           {/* Main Title */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-16">
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">

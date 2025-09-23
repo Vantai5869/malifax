@@ -122,8 +122,27 @@ export default function AboutUs() {
       </section>
 
       {/* Core Values Section */}
-      <section className="bg-white pt-20">
-        <div className="flex flex-col justify-center items-center w-full max-w-[1440px] mx-auto px-4 xl:px-6">
+      <section className="bg-white pt-20 relative">
+        {/* Striped Backgrounds - left and right */}
+        <div
+          className="hidden xl:block absolute left-0 top-48 bottom-0 w-[50vw] z-0 opacity-60 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'left center',
+          }}
+        />
+        <div
+          className="hidden xl:block absolute right-0 top-48 bottom-0 w-[50vw] z-0 opacity-60 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/imgs/service-card-bg.png)',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '529.548px 529px',
+            backgroundPosition: 'right center',
+          }}
+        />
+        <div className="relative z-10 flex flex-col justify-center items-center w-full max-w-[1440px] mx-auto px-4 xl:px-6">
           {/* Section Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

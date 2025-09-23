@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SolutionHero from '../../components/solutions/SolutionHero';
 import ContentHeaderSection from '../../components/solutions/ContentHeaderSection';
@@ -9,6 +9,10 @@ import CTABanner from '../../components/CTABanner';
 import Footer from '../../components/Footer';
 
 export default function CyberSecurityPage() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <div className="">
       <SolutionHero 
@@ -23,8 +27,21 @@ export default function CyberSecurityPage() {
       />
 
       {/* Why Choose Section */}
-      <section className="">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-8 xl:gap-5 px-4 xl:px-0">
+      <section className="relative" suppressHydrationWarning>
+        {/* Right-only striped background anchored to viewport edge (client-only to avoid hydration mismatch) */}
+        {mounted ? (
+          <div
+            className="hidden xl:block absolute right-0 top-16 bottom-0 w-[50vw] z-0 opacity-60 pointer-events-none"
+            style={{
+              backgroundImage: 'url(/imgs/service-card-bg.png)',
+              backgroundRepeat: 'repeat-y',
+              backgroundSize: '529.548px 529px',
+              backgroundPosition: 'right center',
+            }}
+            aria-hidden="true"
+          />
+        ) : null}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative z-10 flex flex-col xl:flex-row w-full max-w-[1194px] mx-auto pt-20 xl:pt-[80px] items-start gap-8 xl:gap-5 px-4 xl:px-0">
           {/* Left Side - Title and Description */}
           <div className="w-full xl:w-auto xl:max-w-[472px] mb-8 xl:mb-0">
             <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px] mb-9 xl:mb-0">
