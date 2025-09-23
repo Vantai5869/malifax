@@ -84,7 +84,7 @@ const shopProducts: ShopProduct[] = [
     id: 4,
     title: "Ubiquiti",
     description: "UniFi is rethinking IT with industry-leading products for enterprise networking, security, and more unified in an incredible software interface",
-    logo: "/svgs/ubiquiti.svg",
+    logo: "/svgs/Ubiquiti.svg",
     logoAlt: "Ubiquiti Logo"
   },
 ];
