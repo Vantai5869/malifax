@@ -7,9 +7,10 @@ interface SolutionCardProps {
   title: string;
   description: string;
   isActive?: boolean;
+  href?: string;
 }
 
-export default function SolutionCard({ icon, title, description, isActive = false }: SolutionCardProps) {
+export default function SolutionCard({ icon, title, description, isActive = false, href }: SolutionCardProps) {
   return (
     <div 
       className={`
@@ -38,7 +39,7 @@ export default function SolutionCard({ icon, title, description, isActive = fals
       </div>
       
       {/* Button */}
-      <LearnMore />
+      <LearnMore href={href ?? '#'} />
     </div>
   );
 }

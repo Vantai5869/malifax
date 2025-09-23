@@ -1,25 +1,65 @@
 "use client";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import SolutionCard from './SolutionCard';
+import LearnMore from '../LearnMore';
 
 const services = [
-  
-  {
-    icon: 'cctv-door-access',
-    title: 'CCTV & Door Access',
-    description: 'Our advanced CCTV and Door Access Systems provide comprehensive security solutions to protect your business, employees, and assets.'
-  },
+  // 1
   {
     icon: 'business-continuity',
     title: 'Business Continuity & Disaster Recovery',
-    description: 'At Malifax Technologies, we provide robust IT Business Continuity and Disaster Recovery (BCDR) solutions to safeguard your business against unforeseen events.'
+    description:
+      'Robust BCDR solutions to safeguard operations and ensure rapid recovery from incidents.',
   },
+  // 2
+  {
+    icon: 'cctv-door-access',
+    title: 'CCTV & Door Access',
+    description:
+      'Comprehensive surveillance and access control to protect your people and assets.',
+  },
+  // 3
+  {
+    icon: 'cyber-security',
+    title: 'Cyber Security',
+    description:
+      'End-to-end protection, monitoring, and response to keep your business secure.',
+  },
+  // 4
   {
     icon: 'enterprise-cloud',
     title: 'Enterprise Cloud',
-    description: 'Our cloud solutions provide flexibility, scalability, and security, ensuring your business can adapt and thrive in today’s fast-paced digital landscape.'
+    description:
+      'Flexible, scalable, and secure cloud platforms tailored for your workloads.',
   },
-  
+  // 5
+  {
+    icon: 'it-infrastructure',
+    title: 'IT Infrastructure Services',
+    description:
+      'Design, deploy, and optimize resilient on-prem and hybrid infrastructure.',
+  },
+  // 6
+  {
+    icon: 'managed-services',
+    title: 'Managed Services',
+    description:
+      'Proactive monitoring and support to maximize uptime and performance.',
+  },
+  // 7
+  {
+    icon: 'network-wifi',
+    title: 'Network infrastructure & Enterprise WiFi',
+    description:
+      'High‑performance wired and wireless networking for modern enterprises.',
+  },
+  // 8
+  {
+    icon: 'voice-solutions',
+    title: 'Voice Solutions (CLOUD / ON-PREM)',
+    description:
+      'Reliable cloud and on‑prem telephony with advanced collaboration features.',
+  },
 ];
 
 export default function SolutionCarousel() {
@@ -27,12 +67,18 @@ export default function SolutionCarousel() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+  // Autoplay control using inactivity timeout
+  const nextAdvanceAtRef = useRef<number>(Date.now() + 3000); // when to move next
+  const AUTOPLAY_INTERVAL_MS = 3000; // between slides while idle
+  const IDLE_DELAY_AFTER_INTERACTION_MS = 4000; // wait after interaction
 
   const cardWidthFixed = 400;
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     setStartX(e.pageX);
+    // pause autoplay after interaction
+    nextAdvanceAtRef.current = Date.now() + IDLE_DELAY_AFTER_INTERACTION_MS;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -58,11 +104,13 @@ export default function SolutionCarousel() {
     }
     
     setIsDragging(false);
+    nextAdvanceAtRef.current = Date.now() + IDLE_DELAY_AFTER_INTERACTION_MS;
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setIsDragging(true);
     setStartX(e.touches[0].clientX);
+    nextAdvanceAtRef.current = Date.now() + IDLE_DELAY_AFTER_INTERACTION_MS;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -86,25 +134,43 @@ export default function SolutionCarousel() {
     }
     
     setIsDragging(false);
+    nextAdvanceAtRef.current = Date.now() + IDLE_DELAY_AFTER_INTERACTION_MS;
   };
 
   const setActiveCard = (index: number) => {
     setActiveIndex(index);
-    
     // Scroll to center the active card
     if (carouselRef.current) {
       const cardWidth = cardWidthFixed; // Width of each card
       const containerWidth = 1258; // Width of container
-      
-      // Calculate scroll position to center the active card
-      const scrollPosition = (index * cardWidth) - (containerWidth / 2) + (cardWidth / 2);
-      
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+      const scrollPosition = index * cardWidth - containerWidth / 2 + cardWidth / 2;
+      carouselRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
     }
+    // Any programmatic selection is also an interaction
+    nextAdvanceAtRef.current = Date.now() + IDLE_DELAY_AFTER_INTERACTION_MS;
   };
+
+  // Auto-advance carousel respecting inactivity pause
+  useEffect(() => {
+    const tick = () => {
+      const now = Date.now();
+      if (now >= nextAdvanceAtRef.current) {
+        const next = (activeIndex + 1) % services.length;
+        setActiveIndex(next);
+        // scroll sync
+        if (carouselRef.current) {
+          const cardWidth = cardWidthFixed;
+          const containerWidth = 1258;
+          const scrollPosition = next * cardWidth - containerWidth / 2 + cardWidth / 2;
+          carouselRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+        }
+        // schedule next advance
+        nextAdvanceAtRef.current = now + AUTOPLAY_INTERVAL_MS;
+      }
+    };
+    const intervalId = setInterval(tick, 400);
+    return () => clearInterval(intervalId);
+  }, [activeIndex]);
 
   // Calculate z-index for each card
   const getCardZIndex = (index: number) => {
@@ -143,7 +209,7 @@ export default function SolutionCarousel() {
               return (
                 <div 
                   key={index}
-                  className={`flex-shrink-0 ${getCardZIndex(index)} cursor-pointer pb-[50px]`}
+                  className={`flex-shrink-0 ${getCardZIndex(index)} cursor-default pb-[50px]`}
                   style={{ 
                     width: `${cardWidthFixed}px`,
                   }}
@@ -152,6 +218,17 @@ export default function SolutionCarousel() {
                   <SolutionCard 
                     {...service}
                     isActive={isActive}
+                    href={
+                      service.icon === 'business-continuity' ? '/solutions/business-continuity' :
+                      service.icon === 'cctv-door-access' ? '/solutions/cctv-door-access' :
+                      service.icon === 'cyber-security' ? '/solutions/cyber-security' :
+                      service.icon === 'enterprise-cloud' ? '/solutions/enterprise-cloud' :
+                      service.icon === 'it-infrastructure' ? '/solutions/it-infrastructure' :
+                      service.icon === 'managed-services' ? '/solutions/managed-services' :
+                      service.icon === 'network-wifi' ? '/solutions/networking-wifi' :
+                      service.icon === 'voice-solutions' ? '/solutions/voice-solutions' :
+                      '#'
+                    }
                   />
                 </div>
               );
@@ -170,7 +247,7 @@ export default function SolutionCarousel() {
               return (
                 <div 
                   key={index}
-                  className="w-full cursor-pointer flex"
+                  className="w-full cursor-default flex"
                   onClick={() => setActiveIndex(index)}
                 >
                   <SolutionCard 
