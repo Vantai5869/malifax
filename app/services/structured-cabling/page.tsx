@@ -31,20 +31,20 @@ export default function StructuredCablingPage() {
       description: "We develop customized cabling plans tailored to your specific business requirements and future growth." 
     },
     { 
-      title: "Cable Management", 
-      description: "Professional organization and management of your cabling infrastructure for maximum efficiency and aesthetics." 
-    },
-    { 
-      title: "Design Consultation & Project Management", 
-      description: "Expert guidance and project management to ensure successful delivery of your structured cabling project." 
-    },
-    { 
       title: "Installation and Implementation", 
       description: "Professional installation of copper and fiber-optic cabling systems with attention to detail and quality." 
     },
     { 
+      title: "Cable Management", 
+      description: "Professional organization and management of your cabling infrastructure for maximum efficiency and aesthetics." 
+    },
+    { 
       title: "Testing and Certification", 
       description: "Thorough testing and certification of all cabling infrastructure to meet industry performance standards." 
+    },
+    { 
+      title: "Design Consultation & Project Management", 
+      description: "Expert guidance and project management to ensure successful delivery of your structured cabling project." 
     },
     { 
       title: "Containment Systems", 
