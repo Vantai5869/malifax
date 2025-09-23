@@ -78,7 +78,7 @@ export default function BusinessContinuityPage() {
             { position: 8, src: '/svgs/solution/business-i2.svg', alt: 'Logo 2', size: 2 },
             { position: 13, src: '/svgs/solution/business-i3.svg', alt: 'Logo 3', size: 1 },
             { position: 18, src: '/svgs/solution/business-i4.svg', alt: 'Logo 4', size: 2 },
-            { position: 19, src: '/svgs/solution/business-i5.svg', alt: 'Logo 5', size: 1 },
+            { position: 23, src: '/svgs/solution/business-i5.svg', alt: 'Logo 5', size: 1 },
             { position: 26, src: '/svgs/solution/business-i6.svg', alt: 'Logo 6', size: 2 },
             { position: 29, src: '/svgs/solution/business-i7.svg', alt: 'Logo 7', size: 1 },
             { position: 33, src: '/svgs/solution/business-i8.svg', alt: 'Logo 8', size: 2 },

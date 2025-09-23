@@ -58,6 +58,13 @@ const LogoGrid: React.FC<LogoGridProps> = ({
           const cellWidth = size === 2 ? cellSizePx * 2 + gapPx : cellSizePx;
           const cellHeight = cellSizePx;
           const bgClass = hasIcon ? (icon?.bgClassName ?? 'bg-[rgb(4,82,216)]') : 'bg-[#F5F5F5]';
+          // subtle tone variation by index
+          const tone = index % 3;
+          const toneClass = tone === 0 ? 'brightness-[1.01]' : tone === 1 ? 'brightness-[1.02]' : 'brightness-[1.03]';
+          // shadows: strong drop-shadow for cells with logos, ultra-light shadow otherwise
+          const cellShadowClass = hasIcon
+            ? 'drop-shadow-[0_24px_48px_rgba(10,69,158,0.18)]'
+            : 'shadow-[0_2px_4px_-2px_rgba(10,69,158,0.03),0_1px_2px_-2px_rgba(10,69,158,0.02)]';
 
           if (hasIcon && size === 2) {
             blockedPositions.add(index + 1);
@@ -70,7 +77,7 @@ const LogoGrid: React.FC<LogoGridProps> = ({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.02 * index }}
-              className={`flex-none rounded-lg flex items-center justify-center ${bgClass}`}
+              className={`flex-none rounded-lg flex items-center justify-center ${bgClass} ${toneClass} ${cellShadowClass}`}
               style={{ width: `${cellWidth}px`, height: `${cellHeight}px` }}
             >
               {hasIcon && (
