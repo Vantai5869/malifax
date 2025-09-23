@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-creative';
-import { Navigation, EffectCreative } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import { Navigation, EffectCreative, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import React from 'react';
 import { Swiper as SwiperType } from 'swiper';
@@ -100,8 +101,9 @@ export default function SwiperDemo({ swiperRef }: ShopSwiperProps) {
         }}
         grabCursor={true}
         effect={'creative'}
-        modules={[Navigation, EffectCreative]}
+        modules={[Navigation, EffectCreative, Autoplay]}
         loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         slidesPerView={3}
         creativeEffect={{
           prev: {
