@@ -181,7 +181,7 @@ export default function StructuredCablingPage() {
           
           {/* Right Side - Services Grid */}
           <div className="w-full xl:flex-1">
-            <div className="w-full grid grid-cols-1 gap-4">
+            <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-8">
               {fiberOpticsServices.map((service, index) => (
                 <ServiceTag key={index} title={service} />
               ))}
