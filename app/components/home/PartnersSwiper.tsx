@@ -37,10 +37,10 @@ export default function PartnersSwiper({ logos }: PartnersSwiperProps) {
               <div className="flex-shrink-0 flex w-[200px] h-[55px] px-6 flex-col justify-center items-center gap-[10px] rounded-[100px] border-2 border-[#D5D7DA]">
                 {href ? (
                   <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex">
-                    <Image src={src} alt={alt} width={200} height={31} className="w-[200px] h-[31px] object-contain" />
+                    <Image src={src} alt={alt} width={200} height={31} className="w-[200px] h-[31px] object-contain" unoptimized />
                   </a>
                 ) : (
-                  <Image src={src} alt={alt} width={200} height={31} className="w-[200px] h-[31px] object-contain" />
+                  <Image src={src} alt={alt} width={200} height={31} className="w-[200px] h-[31px] object-contain" unoptimized />
                 )}
               </div>
             </SwiperSlide>
