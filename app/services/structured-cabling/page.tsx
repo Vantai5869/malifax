@@ -85,7 +85,7 @@ export default function StructuredCablingPage() {
             transition={{ duration: 0.8 }}
             className="relative z-10 flex  flex-col items-start gap-4 order-1 lg:order-1 xl:pl-20 mt-[300px] xl:mt-[436px]"
           >
-            <Tag text="Solutions" />
+            <Tag text="Services" />
             <Title className="text-4xl lg:text-5xl xl:text-7xl">
               Structured Cabling
             </Title>

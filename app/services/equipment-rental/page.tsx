@@ -58,6 +58,7 @@ export default function EquipmentRentalPage() {
       <SolutionHero
         imageSrc="/imgs/solution/equipment-rental.png"
         title="Equipment Rental"
+        tagText="Services"
       />
 
       <ContentHeaderSection

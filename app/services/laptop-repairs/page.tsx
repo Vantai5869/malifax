@@ -72,7 +72,8 @@ export default function LaptopRepairsPage() {
     <div className="min-h-screen bg-white">
       <SolutionHero
         imageSrc="/imgs/solution/laptop-repair.png"
-        title="Laptop Repairs"
+        title="Laptop Repair"
+        tagText="Services"
       />
 
       <ContentHeaderSection

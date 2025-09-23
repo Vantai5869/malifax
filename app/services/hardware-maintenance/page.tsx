@@ -39,12 +39,12 @@ export default function HardwareMaintenancePage() {
       description: "Ensure your IT systems are always available and performing optimally." 
     },
     { 
-      title: "Enhanced Security", 
-      description: "Protect your hardware from potential threats with our comprehensive maintenance services." 
-    },
-    { 
       title: "Extended Lifespan", 
       description: "Prolong the life of your hardware with regular maintenance and timely upgrades." 
+    },
+    { 
+      title: "Enhanced Security", 
+      description: "Protect your hardware from potential threats with our comprehensive maintenance services." 
     },
     { 
       title: "Operational Efficiency", 
@@ -61,6 +61,7 @@ export default function HardwareMaintenancePage() {
       <SolutionHero
         imageSrc="/imgs/solution/hardware-maintenance.png"
         title="Hardware Maintenance"
+        tagText="Services"
       />
 
       <ContentHeaderSection
@@ -74,7 +75,7 @@ export default function HardwareMaintenancePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[900px] mx-auto"
+          className="mt-9 xl:mt-20 px-4 xl:px-0 max-w-[1194px] mx-auto"
         >
           <WhyChoose title="Our Hardware Maintenance Services?" />
         </motion.div>

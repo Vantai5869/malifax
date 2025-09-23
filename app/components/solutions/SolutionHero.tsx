@@ -10,9 +10,10 @@ interface SolutionHeroProps {
   title: string;
   rightMaxWidth?: string;
   rightMinWidth?: string;
+  tagText?: string;
 }
 
-export default function SolutionHero({ imageSrc, title, rightMaxWidth = "max-w-[618px]", rightMinWidth = "min-w-[239px]" }: SolutionHeroProps) {
+export default function SolutionHero({ imageSrc, title, rightMaxWidth = "max-w-[618px]", rightMinWidth = "min-w-[239px]", tagText = "Solutions" }: SolutionHeroProps) {
   return (
     <HeroBackground>
       <div className="flex justify-center flex-1 min-h-0 relative z-10">
@@ -38,7 +39,7 @@ export default function SolutionHero({ imageSrc, title, rightMaxWidth = "max-w-[
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`flex  flex-col items-start gap-4 order-2 lg:order-2 ${rightMinWidth} xl:min-w-[426px] ${rightMaxWidth}`}
           >
-            <Tag text="Solutions" />
+            <Tag text={tagText} />
             <Title className="text-4xl lg:text-5xl xl:text-7xl">
               {title}
             </Title>

@@ -61,6 +61,7 @@ export default function DatacentreSetupPage() {
       <SolutionHero
         imageSrc="/imgs/solution/data-center.png"
         title="Data Centre Setup and Relocation"
+        tagText="Services"
       />
 
       <ContentHeaderSection
