@@ -19,12 +19,15 @@ export default function HeroBackground({ children, className = '' }: HeroBackgro
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute mx-2 my-2 lg:mx-[22.5px] lg:my-6 inset-0 rounded-2xl overflow-hidden z-0"
       >
-        <Image
-          src="/imgs/main-bg.png"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(/imgs/main-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+          aria-hidden="true"
         />
       </motion.div>
       
