@@ -50,25 +50,28 @@ export default function ManagedServicesPage() {
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+            {/* Row 1 */}
             <AccessSystemItem
               title="Network Management"
               description="Ensure your network is always up and running with our comprehensive network management services."
             />
             <AccessSystemItem
+              title="Server Management"
+              description="Maintain optimal performance and availability of your servers with our proactive server management solutions."
+            />
+            {/* Row 2 */}
+            <AccessSystemItem
               title="Cloud Management"
               description="Manage and optimize your cloud environments for enhanced performance and cost-efficiency."
             />
             <AccessSystemItem
-              title="Backup and Disaster Recovery"
-              description="Protect your data and ensure quick recovery with our reliable backup and disaster recovery solutions."
-            />
-            <AccessSystemItem
-              title="Server Management"
-              description="Maintain optimal performance and availability of your servers with our proactive server management solutions."
-            />
-            <AccessSystemItem
               title="Endpoint Management"
               description="Secure and manage all endpoint devices, including desktops, laptops, and mobile devices."
+            />
+            {/* Row 3 */}
+            <AccessSystemItem
+              title="Backup and Disaster Recovery"
+              description="Protect your data and ensure quick recovery with our reliable backup and disaster recovery solutions."
             />
             <AccessSystemItem
               title="Help Desk Support"
