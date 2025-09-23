@@ -96,6 +96,7 @@ export default function StructuredCablingPage() {
       <ContentHeaderSection
         title="Structured Cabling"
         description="At Malifax Technologies, we provide top-notch structured cabling solutions designed to support your business's communication and data needs. Our services ensure a reliable and scalable infrastructure that can adapt to your growing requirements."
+        maxWidthClassName="max-w-[1157px]"
       />
 
       <section className="bg-white">

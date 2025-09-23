@@ -8,6 +8,7 @@ interface ContentHeaderSectionProps {
   description: string;
   titleColor?: string;
   descriptionColor?: string;
+  maxWidthClassName?: string; // e.g., "max-w-[1194px]" or custom
 }
 
 export default function ContentHeaderSection({ 
@@ -15,11 +16,12 @@ export default function ContentHeaderSection({
   title2,
   description, 
   titleColor = "text-[#0452D8]",
+  maxWidthClassName = "max-w-[1194px]",
 }: ContentHeaderSectionProps) {
   return (
     <section className="pt-[72px] xl:pb-2 xl:pt-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center w-full max-w-[1194px] mx-auto`}>
+        <div className={`text-center w-full ${maxWidthClassName} mx-auto`}>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +36,7 @@ export default function ContentHeaderSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className={`text-[14px] lg:text-[18px] text-center font-plus-jakarta text-[#181D27] font-normal leading-[20px] lg:leading-[28px] w-full max-w-[1194px] mx-auto`}
+            className={`text-[14px] lg:text-[18px] text-center font-plus-jakarta text-[#181D27] font-normal leading-[20px] lg:leading-[28px] w-full ${maxWidthClassName} mx-auto`}
           >
             {description}
           </motion.p>

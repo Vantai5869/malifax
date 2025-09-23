@@ -64,6 +64,7 @@ export default function EquipmentRentalPage() {
       <ContentHeaderSection
         title="Equipment Rental"
         description="At Malifax Technologies, we offer a wide range of equipment rental services to meet the diverse needs of your business. Whether you need short-term rentals for a specific project or long-term solutions, our flexible rental options ensure you have the right equipment when you need it."
+        maxWidthClassName="max-w-[1125px]"
       />
 
       <section className="bg-white">
