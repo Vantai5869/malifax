@@ -16,7 +16,6 @@ export default function SolutionCard({ icon, title, description, isActive = fals
         flex flex-col items-end gap-3 w-[343px] xl:w-[458px] xl:h-[328px] p-3 xl:p-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD]
         transition-all duration-300 ease-in-out
         ${isActive ? 'scale-100 brightness-100 shadow-[0px_32px_64px_-12px_#0A459E24]' : 'scale-100 brightness-99.99'}
-        hover:scale-101
       `}
     >
       {/* Top section - Icon, Title and Description */}
