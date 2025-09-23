@@ -24,7 +24,7 @@ interface ShopSwiperProps {
 function ShopProductItem({ product, index }: { product: ShopProduct; index: number }) {
   return (
     <div
-      className={`flex  flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] xl:w-full w-[330px] xl:max-w-[388.333px] box-border border border-gray-200 h-[300px] xl:h-auto ${
+      className={`flex  flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-none xl:shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] xl:w-full w-[330px] xl:max-w-[388.333px] box-border border border-gray-200 h-[300px] xl:h-auto ${
         index % 2 === 0 ? 'xl:translate-y-22' : ''
       }`}
     >
