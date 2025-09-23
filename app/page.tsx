@@ -241,7 +241,40 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <PartnersSwiper 
-              logos={Array.from({ length: 20 }, () => "/imgs/company-logo.png")} 
+              logos={[
+                "/imgs/logo-mf/3CX logo_white.png",
+                "/imgs/logo-mf/Acronis-logo.png",
+                "/imgs/logo-mf/Amazon_Web_Services_Logo.svg.png",
+                "/imgs/logo-mf/APC-Emblem.jpg",
+                "/imgs/logo-mf/ARUBA.png",
+                "/imgs/logo-mf/Avaya_Logo.svg.png",
+                "/imgs/logo-mf/Blackpanda Logo Stacked Dark.png",
+                "/imgs/logo-mf/Check-Point-2024-logo-color.png",
+                "/imgs/logo-mf/CrowdStrike_Logo_2023_Secondary_Red.png",
+                "/imgs/logo-mf/Darktrace_Logo_LightBG_Black.png",
+                "/imgs/logo-mf/DT_AuthorizedPartner_Gray.png",
+                "/imgs/logo-mf/Fortinet_LogoTag_BlackRed.png",
+                "/imgs/logo-mf/Google-Cloud-Logo.png",
+                "/imgs/logo-mf/GPP - Platinum (1).png",
+                "/imgs/logo-mf/H3C.png",
+                "/imgs/logo-mf/hpe_pri_grn_pos_rgb.png",
+                "/imgs/logo-mf/Huawei-Logo.wine.svg",
+                "/imgs/logo-mf/IBM_logo.svg.png",
+                "/imgs/logo-mf/Lenovo-Logo.png",
+                "/imgs/logo-mf/Logitech_logo.svg.png",
+                "/imgs/logo-mf/McAfee_logo.svg.png",
+                "/imgs/logo-mf/microsoft.png",
+                "/imgs/logo-mf/panw_CMYK_Logo_Positive.png",
+                "/imgs/logo-mf/Ruckus_logo_black-orange.png",
+                "/imgs/logo-mf/sophos-logo-blue-rgb.png",
+                "/imgs/logo-mf/Synology_logo_Black.png",
+                "/imgs/logo-mf/TM_Logo_Primary_1c_black_300x64.png",
+                "/imgs/logo-mf/Ubiquiti-Networks-Logo.png",
+                "/imgs/logo-mf/Veeam_main_logo_without_contor_RGB.png",
+                "/imgs/logo-mf/vmware-logo-black.png",
+                "/imgs/logo-mf/watchguard-logo.png",
+                "/imgs/logo-mf/zscaler-logo.svg"
+              ]} 
             />
           </motion.div>
         </div>
