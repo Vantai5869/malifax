@@ -245,7 +245,7 @@ export default function Home() {
                 { src: "/imgs/logo-mf/3cx.png", href: "https://www.3cx.com/", alt: "3CX" },
                 { src: "/imgs/logo-mf/Acronis-logo.png", href: "https://www.acronis.com/", alt: "Acronis" },
                 { src: "/imgs/logo-mf/APC-Emblem.png", href: "https://www.apc.com/", alt: "APC" },
-                { src: "/imgs/logo-mf/Aruba.png", href: "https://arubanetworking.hpe.com/", alt: "Aruba" },
+                { src: "/imgs/logo-mf/ARUBA.png", href: "https://arubanetworking.hpe.com/", alt: "Aruba" },
                 { src: "/imgs/logo-mf/Avaya.png", href: "https://www.avaya.com/", alt: "Avaya" },
                 { src: "/imgs/logo-mf/Amazon_Web_Services_Logo.svg.png", href: "https://aws.amazon.com/", alt: "AWS" },
                 { src: "/imgs/logo-mf/blackpanda.png", href: "https://www.blackpanda.com/", alt: "Blackpanda" },
