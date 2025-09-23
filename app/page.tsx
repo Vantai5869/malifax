@@ -77,6 +77,7 @@ export default function Home() {
               }}
               className="absolute top-[51px] left-[19px] md:top-[51px] md:left-[200px] xl:top-[52px] xl:left-[750px] opacity-100"
             >
+              
               <Image
                 src="/imgs/home-img0.png"
                 alt="Home Image 0"
