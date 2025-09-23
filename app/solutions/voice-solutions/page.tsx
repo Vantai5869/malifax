@@ -44,35 +44,34 @@ export default function VoiceSolutionsPage() {
           {/* Main Title */}
           <div className="text-center mb-16">
             <h2 className="text-[30px] lg:text-[60px] font-semibold text-center font-plus-jakarta text-[#0452D8] leading-[38px] lg:leading-[72px] tracking-[-1.2px]">
-              Our Managed Services
+              Our Voice Services
             </h2>
           </div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
+            {/* Row 1 */}
             <AccessSystemItem
-              title="Network Management"
-              description="Ensure your network is always up and running with our comprehensive network management services."
+              title="Cloud-Based VoIP"
+              description="Leverage the power of the cloud with our VoIP solutions, offering flexibility, scalability, and advanced features without the need for on-site hardware."
             />
             <AccessSystemItem
-              title="Cloud Management"
-              description="Manage and optimize your cloud environments for enhanced performance and cost-efficiency."
+              title="On-Premise PBX"
+              description="Implement a traditional on-premise PBX system that provides full control over your voice infrastructure and customizable features."
+            />
+            {/* Row 2 */}
+            <AccessSystemItem
+              title="Hybrid Solutions"
+              description="Combine the best of both worlds with our hybrid solutions, integrating cloud and on-premise systems for maximum flexibility and reliability."
             />
             <AccessSystemItem
-              title="Backup and Disaster Recovery"
-              description="Protect your data and ensure quick recovery with our reliable backup and disaster recovery solutions."
+              title="Unified Communications"
+              description="Integrate voice, video, messaging, and collaboration tools into a single, cohesive platform to enhance productivity and communication."
             />
+            {/* Row 3 */}
             <AccessSystemItem
-              title="Server Management"
-              description="Maintain optimal performance and availability of your servers with our proactive server management solutions."
-            />
-            <AccessSystemItem
-              title="Endpoint Management"
-              description="Secure and manage all endpoint devices, including desktops, laptops, and mobile devices."
-            />
-            <AccessSystemItem
-              title="Help Desk Support"
-              description="Provide your employees with 24/7 access to our help desk for prompt resolution of IT issues."
+              title="Support and Maintenance"
+              description="Receive ongoing support and maintenance to ensure your voice systems are always operational and up-to-date."
             />
           </div>
         </div>
@@ -85,7 +84,7 @@ export default function VoiceSolutionsPage() {
           <div className="w-full xl:w-auto xl:max-w-[355px] mb-8 xl:mb-0">
             <h2 className="text-[30px] xl:text-[60px] font-semibold text-center xl:text-left font-plus-jakarta leading-[38px] xl:leading-[72px] tracking-[-1.2px]">
               <span className="text-[#0452D8]">Benefits of</span>{" "}
-              <span className="text-[#181D27]">Our Managed Services</span>
+              <span className="text-[#181D27]">Our Voice Solutions</span>
             </h2>
           </div>
           
@@ -93,24 +92,24 @@ export default function VoiceSolutionsPage() {
           <div className="w-full xl:w-auto">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 place-items-center xl:place-items-stretch">
               <AccessSystemItem
-                title="Improved Performance"
-                description="Enhance the performance and reliability of your IT systems."
-              />
-              <AccessSystemItem
-                title="Reduced Downtime"
-                description="Minimize downtime with proactive monitoring and quick issue resolution."
+                title="Enhanced Communication"
+                description="Improve internal and external communication with high-quality voice services."
               />
               <AccessSystemItem
                 title="Increased Productivity"
-                description="Allow your team to focus on strategic initiatives rather than day-to-day IT management."
+                description="Boost productivity with advanced features and seamless integration with other business tools."
+              />
+              <AccessSystemItem
+                title="Cost Savings"
+                description="Reduce operational costs with our cost-effective voice solutions."
               />
               <AccessSystemItem
                 title="Future-Proofing"
-                description="Stay ahead of technological advancements with our up-to-date IT solutions and expertise."
+                description="Stay ahead of technological advancements with our up-to-date voice solutions."
               />
               <AccessSystemItem
                 title="Peace of Mind"
-                description="Enjoy peace of mind knowing that your IT infrastructure is in capable hands."
+                description="Enjoy peace of mind knowing that your voice infrastructure is secure, reliable, and supported by experts."
               />
             </div>
           </div>
