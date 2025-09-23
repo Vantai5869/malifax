@@ -24,11 +24,11 @@ interface ShopSwiperProps {
 function ShopProductItem({ product, index }: { product: ShopProduct; index: number }) {
   return (
     <div
-      className={`flex flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] xl:w-full w-[330px] xl:max-w-[388.333px] box-border border border-gray-200 h-[300px] xl:h-auto ${
+      className={`flex  flex-col items-end gap-3 p-3 rounded-[22px] bg-gray-50 shadow-[0_32px_64px_-12px_rgba(10,69,158,0.14)] xl:w-full w-[330px] xl:max-w-[388.333px] box-border border border-gray-200 h-[300px] xl:h-auto ${
         index % 2 === 0 ? 'xl:translate-y-22' : ''
       }`}
     >
-      <div className="flex flex-col justify-center items-start gap-4 p-6 rounded-2xl bg-gradient-to-tr from-blue-50 to-white self-stretch box-border outline outline-1 outline-gray-200">
+      <div className="flex flex-col h-full justify-center items-start gap-4 p-6 rounded-2xl bg-gradient-to-tr from-blue-50 to-white self-stretch box-border outline outline-1 outline-gray-200">
         <h3 className="self-stretch font-['Plus_Jakarta_Sans'] font-semibold text-xl text-gray-900 leading-[30px]">
           {product.title}
         </h3>
@@ -82,10 +82,10 @@ const shopProducts: ShopProduct[] = [
   ,
   {
     id: 4,
-    title: "Lenovo",
-    description: "Lenovo is a global technology company that designs, develops, manufactures and markets innovative consumer and enterprise technology products and services.",
-    logo: "/svgs/lenovo.svg",
-    logoAlt: "Lenovo Logo"
+    title: "Ubiquiti",
+    description: "UniFi is rethinking IT with industry-leading products for enterprise networking, security, and more unified in an incredible software interface",
+    logo: "/svgs/ubiquiti.svg",
+    logoAlt: "Ubiquiti Logo"
   },
 ];
 
