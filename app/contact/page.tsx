@@ -62,7 +62,7 @@ export default function ContactUs() {
           <div className="max-w-[340px] flex flex-col justify-center items-start gap-4">
             {/* Tag */}
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <Tag text="CONTACT US" />
+              <Tag text="Contact Us" />
             </motion.div>
 
             {/* Main Heading */}
@@ -93,8 +93,8 @@ export default function ContactUs() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="flex w-full lg:w-[581px] p-3 flex-col items-end gap-3 rounded-[22px] outline outline-1 outline-[#E9EAEB] bg-[#FDFDFD]">
-            <div className="flex p-4 lg:p-6 flex-col items-start gap-4 self-stretch rounded-4xl outline outline-1 outline-[#E9EAEB] bg-gradient-to-tr from-[#ECF9FF] to-white">
+          <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="flex w-full lg:w-[581px] p-3 flex-col items-end gap-3 rounded-[22px] border border-[#E9EAEB] bg-[#FDFDFD]">
+            <div className="flex p-6 flex-col items-start gap-4 self-stretch rounded-[16px] border border-[#E9EAEB] bg-[linear-gradient(247deg,#FFF_0%,#ECF9FF_100%)]">
               <form className="w-full space-y-4">
                 {/* Full Name Input */}
                 <div className="flex flex-col items-start gap-[6px] self-stretch">
