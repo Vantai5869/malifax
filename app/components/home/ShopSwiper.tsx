@@ -128,7 +128,7 @@ export default function SwiperDemo({ swiperRef }: ShopSwiperProps) {
           },
           1280: { 
             slidesPerView: 3, 
-            spaceBetween: 30
+            spaceBetween: 32
           } 
          
         }}

@@ -18,32 +18,38 @@ const services = [
   {
     icon: 'tag36_36',
     title: 'Datacentre Setup / Relocation',
-    description: 'We specialize in providing comprehensive data centre setup and relocation services. Our expert team ensures a seamless and efficient transition with minimal disruption to your business operations.'
+    description: 'We specialize in providing comprehensive data centre setup and relocation services. Our expert team ensures a seamless and efficient transition with minimal disruption to your business operations.',
+    href: '/services/datacentre-setup'
   },
   {
     icon: 'tag36_36',
     title: 'Hardware Maintenance',
-    description: 'Our comprehensive hardware maintenance services are designed to keep your systems running efficiently and minimize downtime.'
+    description: 'Our comprehensive hardware maintenance services are designed to keep your systems running efficiently and minimize downtime.',
+    href: '/services/hardware-maintenance'
   },
   {
     icon: 'tag36_36',
     title: 'Laptop Repairs',
-    description: 'At Malifax Technologies, we understand how essential your laptop is to your daily operations. Our professional laptop repair services are designed to get you back up and running quickly, with minimal disruption to your workflow.'
+    description: 'At Malifax Technologies, we understand how essential your laptop is to your daily operations. Our professional laptop repair services are designed to get you back up and running quickly, with minimal disruption to your workflow.',
+    href: '/services/laptop-repairs'
   },
   {
     icon: 'tag36_36',
     title: 'Equipment Rental',
-    description: 'At Malifax Technologies, we offer a wide range of equipment rental services to meet the diverse needs of your business. Our flexible rental options ensure you have the right equipment when you need it.'
+    description: 'At Malifax Technologies, we offer a wide range of equipment rental services to meet the diverse needs of your business. Our flexible rental options ensure you have the right equipment when you need it.',
+    href: '/services/equipment-rental'
   },
   {
     icon: 'tag36_36',
     title: 'Structured Cablings',
-    description: 'At Malifax Technologies, we provide top-notch structured cabling solutions designed to support your business\'s communication and data needs.'
+    description: 'At Malifax Technologies, we provide top-notch structured cabling solutions designed to support your business\'s communication and data needs.',
+    href: '/services/structured-cabling'
   },
   {
     icon: 'tag36_36',
     title: 'IT Outsource',
-    description: 'Malifax\'s skilled team ensures efficient maintenance and support of enterprise IT systems for optimal resource use.'
+    description: 'Malifax\'s skilled team ensures efficient maintenance and support of enterprise IT systems for optimal resource use.',
+    href: undefined
   }
 ];
 
@@ -394,6 +400,7 @@ export default function Home() {
                         icon={service.icon}
                         title={service.title}
                         description={service.description}
+                        href={service.href}
                       />
                     </motion.div>
                   ))}

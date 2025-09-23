@@ -6,10 +6,10 @@ interface ServiceCardProps {
   icon: string;
   title: string;
   description: string;
-  onClick?: () => void;
+  href?: string;
 }
 
-export default function ServiceCard({ icon, title, description, onClick }: ServiceCardProps) {
+export default function ServiceCard({ icon, title, description, href }: ServiceCardProps) {
   return (
     <div className="flex flex-col gap-3 xl:gap-3 w-[343px] xl:w-[581px] p-3 xl:p-3 rounded-[22px] xl:rounded-[22px] bg-white box-border outline outline-1 outline-[#E9EAEB] flex-1">
       {/* Inner border with gradient background */}
@@ -31,7 +31,7 @@ export default function ServiceCard({ icon, title, description, onClick }: Servi
           
           {/* Learn More Button - only visible on desktop */}
           <div className="hidden xl:block">
-            <LearnMore onClick={onClick} />
+            <LearnMore href={href} />
           </div>
         </div>
         
@@ -44,7 +44,7 @@ export default function ServiceCard({ icon, title, description, onClick }: Servi
         
         {/* Learn More Button - only visible on mobile, at bottom left */}
         <div className="xl:hidden flex justify-start">
-          <LearnMore onClick={onClick} />
+          <LearnMore href={href} />
         </div>
       </div>
     </div>
